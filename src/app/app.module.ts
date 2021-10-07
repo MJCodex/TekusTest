@@ -18,6 +18,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { SubscribersFormComponent } from './pages/subscribers-form/subscribers-form.component';
 import { MatDialogModule } from "@angular/material/dialog";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { MatDialogModule } from "@angular/material/dialog";
     MatSnackBarModule,
     MatTableModule,
     MatDialogModule,
+    MatCardModule,
   ],
   providers: [
     {
