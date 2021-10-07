@@ -1,0 +1,51 @@
+<form [formGroup]="form">
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>Usuario</mat-label>
+      <input matInput required formControlName="Name" placeholder="Usuario">
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>Usuario</mat-label>
+      <input matInput required formControlName="Email" placeholder="Usuario">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>Usuario</mat-label>
+      <input matInput required formControlName="CountryCode" placeholder="Usuario">
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>Usuario</mat-label>
+      <input matInput required formControlName="CountryName" placeholder="Usuario">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>Usuario</mat-label>
+      <input matInput required formControlName="PhoneCode" placeholder="Usuario">
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>Usuario</mat-label>
+      <input matInput required formControlName="PhoneNumber" placeholder="Usuario">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>Usuario</mat-label>
+      <input matInput required formControlName="JobTitle" placeholder="Usuario">
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>Usuario</mat-label>
+      <input matInput required formControlName="Area" placeholder="Usuario">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>Usuario</mat-label>
+      <input matInput required formControlName="Topics" placeholder="Usuario">
+    </mat-form-field>
+  </p>
+  <p>
+    <button mat-button color="primary" (click)="save()" [disabled]="form.invalid">Login</button>
+  </p>
+</form>

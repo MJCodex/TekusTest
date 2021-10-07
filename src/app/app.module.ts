@@ -15,12 +15,16 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { SubscribersComponent } from './pages/subscribers/subscribers.component';
 import {MatTableModule} from "@angular/material/table";
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from '../app/interceptor/auth.interceptor';
+import { AuthInterceptor } from './interceptor/auth.interceptor';
+import { SubscribersFormComponent } from './pages/subscribers-form/subscribers-form.component';
+import { MatDialogModule } from "@angular/material/dialog";
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SubscribersComponent
+    SubscribersComponent,
+    SubscribersFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,8 @@ import { AuthInterceptor } from '../app/interceptor/auth.interceptor';
     HttpClientModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule,
   ],
   providers: [
     {
