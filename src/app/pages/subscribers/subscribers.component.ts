@@ -4,6 +4,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import {SubscribersFormComponent} from '../subscribers-form/subscribers-form.component';
 import {MatDialog} from '@angular/material/dialog';
 import {ConfirmDialogComponent} from '../../components/confirm-dialog/confirm-dialog.component';
+import {DeleteSubscribersService} from '../../services/delete-subscribers.service';
 
 @Component({
   selector: 'app-subscribers',
@@ -16,6 +17,7 @@ export class SubscribersComponent implements OnInit {
 
   constructor(
     private _getSubscribersService: GetSubscribersService,
+    private _deleteSubscribersService: DeleteSubscribersService,
     private dialog: MatDialog,
   ) {
   }
@@ -30,7 +32,6 @@ export class SubscribersComponent implements OnInit {
     };
     this._getSubscribersService.run(params).then((response) => {
       this.dataSource.data = response.Data;
-      console.log(response);
     });
   }
 
@@ -49,14 +50,13 @@ export class SubscribersComponent implements OnInit {
   confirmDelete(data: any): void {
     this.dialog
       .open(ConfirmDialogComponent, {
-        data: `¿Te gusta programar en TypeScript?`,
+        data: '¿Deseas eliminar este registro?',
       })
       .afterClosed()
-      .subscribe((confirmed: Boolean) => {
+      .subscribe(async (confirmed: Boolean) => {
         if (confirmed) {
-          alert('¡A mí también!');
-        } else {
-          alert('Deberías probarlo, a mí me gusta :)');
+          await this._deleteSubscribersService.run(data.Id);
+          await this.getSubscribers();
         }
       });
   }

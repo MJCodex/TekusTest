@@ -43,6 +43,7 @@
       <input matInput required formControlName="Area" placeholder="Usuario">
     </mat-form-field>
   </p>
+  <p>Topics</p>
   <p>
     <ng-container *ngFor="let checkbox of topics; let i = index" formArrayName="Topics">
       <input type="checkbox" [formControlName]="i"/>{{checkbox.name}}
@@ -50,6 +51,6 @@
 
   </p>
   <mat-card-actions>
-    <button mat-button type="submit">Guardar</button>
+    <button mat-raised-button color="primary" type="submit">Guardar</button>
   </mat-card-actions>
 </form>
