@@ -1,11 +1,12 @@
-<form [formGroup]="form">
-  <div class="login">
-    <mat-form-field appearance="standard" class="input-login">
+<form [formGroup]="form" class="login-card" (submit)="login()">
+  <div class="login mat-elevation-z8">
+    <h1 class="title">Login</h1>
+    <mat-form-field appearance="standard" class="control-login">
       <mat-label>Usuario</mat-label>
       <input matInput required formControlName="UserName" placeholder="Usuario">
     </mat-form-field>
     <br>
-    <mat-form-field appearance="standard" class="input-login">
+    <mat-form-field appearance="standard" class="control-login">
       <mat-label>Contraseña</mat-label>
       <input matInput required [type]="hide ? 'password' : 'text'" formControlName="Password">
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
@@ -13,10 +14,12 @@
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
     </mat-form-field>
-  </div>
-  <div class="login-button">
-    <button mat-raised-button color="primary" (click)="login()" [disabled]="form.invalid"
-    >Login
+  <div class="login-card">
+    <button mat-raised-button color="primary"
+            class="control-login"
+            type="submit" [disabled]="form.invalid"
+    >Ingresar
     </button>
+  </div>
   </div>
 </form>
