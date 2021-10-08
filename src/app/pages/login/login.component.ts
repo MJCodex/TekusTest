@@ -32,14 +32,6 @@ export class LoginComponent implements OnInit {
       return
     }
 
-    this.login_.run(this.form.value).then((response) => {
-      localStorage.setItem('potato-token', response.Token);
-      this._router.navigateByUrl('/home');
-    }).catch((error) => {
-      this._snackBar.open(error.error.error, "",
-        {
-          duration: 1500,
-        });
-    })
+    this.login_.login(this.form.value);
   }
 }
