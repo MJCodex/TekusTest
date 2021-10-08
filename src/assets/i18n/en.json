@@ -1,9 +1,9 @@
 {
   "login": {
-    "title": "Sin in",
+    "title": "Sign in",
     "user": "User",
     "password": "Password",
-    "sin-in": "Sin in",
+    "sin-in": "Sign in",
     "logout": "Logout"
   },
   "subscribers": {

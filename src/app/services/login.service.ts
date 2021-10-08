@@ -32,7 +32,6 @@ export class LoginService {
   async logout (): Promise<void> {
     localStorage.removeItem('potato-token');
     await this._router.navigateByUrl('/login');
-    console.log('Salir');
   }
 
   isLoged (): any {
