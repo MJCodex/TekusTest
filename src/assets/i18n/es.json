@@ -1,5 +1,40 @@
 {
   "login": {
-    "title": "Acceso"
+    "title": "Iniciar sesion",
+    "user": "Usuario",
+    "password": "Contraseña",
+    "sin-in": "Iniciar sesion",
+    "logout": "Cerrar sesión"
+  },
+  "subscribers": {
+    "new": "Nuevo",
+    "table": {
+      "name": "Nombre",
+      "email": "Correo",
+      "job": "Trabajo",
+      "country": "Pais",
+      "actions": "Acciones"
+    }
+  },
+  "subscribers-form": {
+    "title": "Subscribir",
+    "name": "Nombre",
+    "email": "Correo",
+    "country-code": "Código de pais",
+    "country-name": "Nombre de pais",
+    "phone-code": "Indicativo",
+    "phone-number": "Número de teléfono",
+    "job-title": "Trabajo",
+    "area": "Area",
+    "topics": "Temas",
+    "save": "Guardar",
+    "new": "Nuevo",
+    "edit": "Editar"
+  },
+  "confirm-dialog": {
+    "title": "Eliminar",
+    "message": "¿Deseas eliminar este registro?",
+    "yes": "Si",
+    "no": "No"
   }
 }

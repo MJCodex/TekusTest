@@ -2,12 +2,12 @@
   <div class="login mat-elevation-z8">
     <h1 class="title">{{'login.title'|transloco}}</h1>
     <mat-form-field appearance="standard" class="control-login">
-      <mat-label>Usuario</mat-label>
-      <input matInput required formControlName="UserName" placeholder="Usuario">
+      <mat-label>{{'login.user'|transloco}}</mat-label>
+      <input matInput required formControlName="UserName">
     </mat-form-field>
     <br>
     <mat-form-field appearance="standard" class="control-login">
-      <mat-label>Contraseña</mat-label>
+      <mat-label>{{'login.password'|transloco}}</mat-label>
       <input matInput required [type]="hide ? 'password' : 'text'" formControlName="Password">
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
               [attr.aria-pressed]="hide">
@@ -18,7 +18,7 @@
     <button mat-raised-button color="primary"
             class="control-login"
             type="submit" [disabled]="form.invalid"
-    >Ingresar
+    >{{'login.sin-in'|transloco}}
     </button>
   </div>
   </div>

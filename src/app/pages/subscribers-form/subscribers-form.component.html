@@ -1,49 +1,54 @@
 <form [formGroup]="form" (submit)="save()">
-  <mat-card-title>Subscriber</mat-card-title>
+  <mat-card-title>{{'subscribers-form.title'|transloco}}</mat-card-title>
   <p>
-    <mat-card-subtitle>Nuevo</mat-card-subtitle>
+    <mat-card-subtitle
+    *ngIf="!data.subscriber"
+    >{{'subscribers-form.new'|transloco}}</mat-card-subtitle>
+    <mat-card-subtitle
+    *ngIf="data.subscriber"
+    >{{'subscribers-form.edit'|transloco}}</mat-card-subtitle>
   </p>
   <p>
     <mat-form-field appearance="standard">
-      <mat-label>Nombre</mat-label>
-      <input matInput required formControlName="Name" placeholder="Usuario">
+      <mat-label>{{'subscribers-form.name'|transloco}}</mat-label>
+      <input matInput required formControlName="Name">
     </mat-form-field>
     <mat-form-field appearance="standard" class="form-input">
-      <mat-label>Email</mat-label>
-      <input matInput required formControlName="Email" placeholder="Usuario">
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="standard">
-      <mat-label>Código de pais</mat-label>
-      <input matInput required formControlName="CountryCode" placeholder="Usuario">
-    </mat-form-field>
-    <mat-form-field appearance="standard" class="form-input">
-      <mat-label>Pais</mat-label>
-      <input matInput required formControlName="CountryName" placeholder="Usuario">
+      <mat-label>{{'subscribers-form.email'|transloco}}</mat-label>
+      <input matInput required formControlName="Email">
     </mat-form-field>
   </p>
   <p>
     <mat-form-field appearance="standard">
-      <mat-label>Codigo celular</mat-label>
-      <input matInput required formControlName="PhoneCode" placeholder="Usuario">
+      <mat-label>{{'subscribers-form.country-code'|transloco}}</mat-label>
+      <input matInput required formControlName="CountryCode">
     </mat-form-field>
     <mat-form-field appearance="standard" class="form-input">
-      <mat-label>Celular</mat-label>
-      <input matInput required formControlName="PhoneNumber" placeholder="Usuario">
+      <mat-label>{{'subscribers-form.country-name'|transloco}}</mat-label>
+      <input matInput required formControlName="CountryName">
     </mat-form-field>
   </p>
   <p>
     <mat-form-field appearance="standard">
-      <mat-label>Trabajo</mat-label>
-      <input matInput required formControlName="JobTitle" placeholder="Usuario">
+      <mat-label>{{'subscribers-form.phone-code'|transloco}}</mat-label>
+      <input matInput required formControlName="PhoneCode">
     </mat-form-field>
     <mat-form-field appearance="standard" class="form-input">
-      <mat-label>Area</mat-label>
-      <input matInput required formControlName="Area" placeholder="Usuario">
+      <mat-label>{{'subscribers-form.phone-number'|transloco}}</mat-label>
+      <input matInput required formControlName="PhoneNumber">
     </mat-form-field>
   </p>
-  <p>Topics</p>
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>{{'subscribers-form.job-title'|transloco}}</mat-label>
+      <input matInput required formControlName="JobTitle">
+    </mat-form-field>
+    <mat-form-field appearance="standard" class="form-input">
+      <mat-label>{{'subscribers-form.area'|transloco}}</mat-label>
+      <input matInput required formControlName="Area">
+    </mat-form-field>
+  </p>
+  <p>{{'subscribers-form.topics'|transloco}}</p>
   <p>
     <ng-container *ngFor="let checkbox of topics; let i = index" formArrayName="Topics">
       <input type="checkbox" [formControlName]="i"/>{{checkbox.name}}
@@ -52,7 +57,7 @@
   </p>
   <mat-card-actions>
     <div class="save-button">
-      <button mat-raised-button color="primary" type="submit">Guardar</button>
+      <button mat-raised-button color="primary" type="submit">{{'subscribers-form.save'|transloco}}</button>
     </div>
   </mat-card-actions>
 </form>

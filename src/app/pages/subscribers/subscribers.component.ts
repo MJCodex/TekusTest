@@ -52,7 +52,7 @@ export class SubscribersComponent implements OnInit {
   confirmDelete(data: any): void {
     this.dialog
       .open(ConfirmDialogComponent, {
-        data: '¿Deseas eliminar este registro?',
+        data: null,
       })
       .afterClosed()
       .subscribe(async (confirmed: Boolean) => {

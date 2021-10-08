@@ -1,8 +1,10 @@
-<h1 mat-dialog-title>Eliminar</h1>
+<h1 mat-dialog-title>{{'confirm-dialog.title'|transloco}}</h1>
 <div mat-dialog-content>
-  <p>{{message}}</p>
+  <p>{{'confirm-dialog.message'|transloco}}</p>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="close()">No</button>
-  <button mat-button (click)="confirmed()" cdkFocusInitial>Sí</button>
+  <button mat-raised-button (click)="close()">{{'confirm-dialog.no'|transloco}}</button>
+  <button mat-raised-button (click)="confirmed()" cdkFocusInitial
+  color="warn"
+  >{{'confirm-dialog.yes'|transloco}}</button>
 </div>
