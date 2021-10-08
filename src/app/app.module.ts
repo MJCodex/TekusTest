@@ -20,6 +20,7 @@ import { SubscribersFormComponent } from './pages/subscribers-form/subscribers-f
 import { MatDialogModule } from "@angular/material/dialog";
 import {MatCardModule} from "@angular/material/card";
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     LoginComponent,
     SubscribersComponent,
     SubscribersFormComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,

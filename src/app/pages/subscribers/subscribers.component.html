@@ -1,34 +1,37 @@
 <p>
   <button mat-button color="primary" (click)="newSubscriber()">Nuevo</button>
 </p>
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
->
-
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
-
-  <!-- Position Column -->
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <ng-container matColumnDef="Area">
     <th mat-header-cell *matHeaderCellDef> Area </th>
     <td mat-cell *matCellDef="let element"> {{element.Area}} </td>
   </ng-container>
 
-  <!-- Name Column -->
   <ng-container matColumnDef="Name">
     <th mat-header-cell *matHeaderCellDef> Nombre </th>
     <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
   </ng-container>
 
-  <!-- Weight Column -->
   <ng-container matColumnDef="Email">
     <th mat-header-cell *matHeaderCellDef> Correo </th>
     <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
   </ng-container>
 
-  <!-- Symbol Column -->
   <ng-container matColumnDef="CountryName">
     <th mat-header-cell *matHeaderCellDef> Pais </th>
     <td mat-cell *matCellDef="let element"> {{element.CountryName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Actions">
+    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button color="primary" (click)="newSubscriber(element)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="confirmDelete(element)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
