@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {CreateOrUpdateSubscribersService} from '../../services/create-or-update-subscribers.service';
 
 @Component({
   selector: 'app-subscribers-form',
@@ -9,8 +10,16 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 export class SubscribersFormComponent implements OnInit {
   @Output() newRecord = new EventEmitter();
   form!: FormGroup;
+  topics = [{
+    name: 'CSS',
+    value: '1'
+  }, {
+    name: 'HTML',
+    value: '2'
+  }];
   constructor(
     private _formBuilder: FormBuilder,
+    private _createOrUpdateSubscribersService: CreateOrUpdateSubscribersService
   ) { }
 
   ngOnInit(): void {
@@ -23,11 +32,26 @@ export class SubscribersFormComponent implements OnInit {
       PhoneNumber: ['', [Validators.required]],
       JobTitle: ['', [Validators.required]],
       Area: ['', [Validators.required]],
-      Topics: ['', [Validators.required]],
+      Topics: this._formBuilder.array(this.topics.map(x => false))
     });
   }
   async save(): Promise<void> {
-
+    const formValue = {
+      ...this.form.value,
+      Topics: this.form.value.Topics
+        .map((checked: any, i: number) => checked ? this.topics[i].value : null)
+        .filter((v: null) => v !== null),
+    }
+    console.log(formValue);
+    if(!this.form.valid) {
+      return
+    }
+    const data = {
+      Subscribers:[
+        this.form.value
+      ]
+    };
+    await this._createOrUpdateSubscribersService.run(data, '');
     this.newRecord.emit();
   }
 }

@@ -10,7 +10,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import { HttpClientModule } from '@angular/common/http';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { SubscribersComponent } from './pages/subscribers/subscribers.component';
 import {MatTableModule} from "@angular/material/table";
@@ -19,6 +19,7 @@ import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { SubscribersFormComponent } from './pages/subscribers-form/subscribers-form.component';
 import { MatDialogModule } from "@angular/material/dialog";
 import {MatCardModule} from "@angular/material/card";
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,8 @@ import {MatCardModule} from "@angular/material/card";
     MatTableModule,
     MatDialogModule,
     MatCardModule,
+    MatCheckboxModule,
+    FormsModule,
   ],
   providers: [
     {

@@ -1,55 +1,55 @@
-<form [formGroup]="form">
+<form [formGroup]="form" (submit)="save()">
   <mat-card-title>Subscriber</mat-card-title>
   <p>
     <mat-card-subtitle>Nuevo</mat-card-subtitle>
   </p>
   <p>
     <mat-form-field appearance="standard">
-      <mat-label>Usuario</mat-label>
+      <mat-label>Nombre</mat-label>
       <input matInput required formControlName="Name" placeholder="Usuario">
     </mat-form-field>
     <mat-form-field appearance="standard" class="form-input">
-      <mat-label>Usuario</mat-label>
+      <mat-label>Email</mat-label>
       <input matInput required formControlName="Email" placeholder="Usuario">
     </mat-form-field>
   </p>
   <p>
     <mat-form-field appearance="standard">
-      <mat-label>Usuario</mat-label>
+      <mat-label>Código de pais</mat-label>
       <input matInput required formControlName="CountryCode" placeholder="Usuario">
     </mat-form-field>
     <mat-form-field appearance="standard" class="form-input">
-      <mat-label>Usuario</mat-label>
+      <mat-label>Pais</mat-label>
       <input matInput required formControlName="CountryName" placeholder="Usuario">
     </mat-form-field>
   </p>
   <p>
     <mat-form-field appearance="standard">
-      <mat-label>Usuario</mat-label>
+      <mat-label>Codigo celular</mat-label>
       <input matInput required formControlName="PhoneCode" placeholder="Usuario">
     </mat-form-field>
     <mat-form-field appearance="standard" class="form-input">
-      <mat-label>Usuario</mat-label>
+      <mat-label>Celular</mat-label>
       <input matInput required formControlName="PhoneNumber" placeholder="Usuario">
     </mat-form-field>
   </p>
   <p>
     <mat-form-field appearance="standard">
-      <mat-label>Usuario</mat-label>
+      <mat-label>Trabajo</mat-label>
       <input matInput required formControlName="JobTitle" placeholder="Usuario">
     </mat-form-field>
     <mat-form-field appearance="standard" class="form-input">
-      <mat-label>Usuario</mat-label>
+      <mat-label>Area</mat-label>
       <input matInput required formControlName="Area" placeholder="Usuario">
     </mat-form-field>
   </p>
   <p>
-    <mat-form-field appearance="standard">
-      <mat-label>Usuario</mat-label>
-      <input matInput required formControlName="Topics" placeholder="Usuario">
-    </mat-form-field>
+    <ng-container *ngFor="let checkbox of topics; let i = index" formArrayName="Topics">
+      <input type="checkbox" [formControlName]="i"/>{{checkbox.name}}
+    </ng-container>
+
   </p>
   <mat-card-actions>
-    <button mat-button>Guardar</button>
+    <button mat-button type="submit">Guardar</button>
   </mat-card-actions>
 </form>

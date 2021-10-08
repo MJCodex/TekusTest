@@ -21,7 +21,6 @@ export class AuthInterceptor implements HttpInterceptor {
         // Agregando token para autorizacion de la peticion
         try {
             const token = localStorage.getItem('potato-token');
-            console.log(token);
             newReq = newReq.clone({
                 headers: newReq.headers.set('Authorization', 'Bearer ' + token)
             });
