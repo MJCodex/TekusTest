@@ -12,7 +12,7 @@ import {DeleteSubscribersService} from '../../services/delete-subscribers.servic
   styleUrls: ['./subscribers.component.sass'],
 })
 export class SubscribersComponent implements OnInit {
-  displayedColumns: string[] = ['Area', 'Name', 'Email', 'CountryName', 'Actions'];
+  displayedColumns: string[] = ['Name', 'Email', 'JobTitle', 'CountryName', 'Actions'];
   dataSource = new MatTableDataSource<any>();
 
   constructor(
@@ -32,7 +32,6 @@ export class SubscribersComponent implements OnInit {
       count: 1,
     };
     this._getSubscribersService.run(params).then((response) => {
-      console.log(response);
       this.dataSource.data = response.Data;
     });
   }

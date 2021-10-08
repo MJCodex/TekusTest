@@ -14,6 +14,5 @@ export class LoginService {
 
   async run(data: any): Promise<any> {
     return await this._httpClient.post(`${environment.api}account/login`, data).toPromise();
-    //return this._httpClient.post<any[]>(`${environment.api}/account/login`, data).toPromise();
   }
 }

@@ -15,7 +15,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { SubscribersComponent } from './pages/subscribers/subscribers.component';
 import {MatTableModule} from "@angular/material/table";
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from './interceptor/auth.interceptor';
+import { AuthInterceptor } from './shared/interceptor/auth.interceptor';
 import { SubscribersFormComponent } from './pages/subscribers-form/subscribers-form.component';
 import { MatDialogModule } from "@angular/material/dialog";
 import {MatCardModule} from "@angular/material/card";

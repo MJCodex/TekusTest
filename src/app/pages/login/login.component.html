@@ -1,18 +1,22 @@
 <form [formGroup]="form">
-  <p>
-    <mat-form-field appearance="standard">
+  <div class="login">
+    <mat-form-field appearance="standard" class="input-login">
       <mat-label>Usuario</mat-label>
       <input matInput required formControlName="UserName" placeholder="Usuario">
     </mat-form-field>
-  </p>
-  <mat-form-field appearance="standard">
-    <mat-label>Contraseña</mat-label>
-    <input matInput required [type]="hide ? 'password' : 'text'" formControlName="Password">
-    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    <br>
+    <mat-form-field appearance="standard" class="input-login">
+      <mat-label>Contraseña</mat-label>
+      <input matInput required [type]="hide ? 'password' : 'text'" formControlName="Password">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <div class="login-button">
+    <button mat-raised-button color="primary" (click)="login()" [disabled]="form.invalid"
+    >Login
     </button>
-  </mat-form-field>
-  <p>
-  <button mat-button color="primary" (click)="login()" [disabled]="form.invalid">Login</button>
-  </p>
+  </div>
 </form>
