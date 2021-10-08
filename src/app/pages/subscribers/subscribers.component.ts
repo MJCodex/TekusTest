@@ -14,6 +14,9 @@ import {DeleteSubscribersService} from '../../services/delete-subscribers.servic
 export class SubscribersComponent implements OnInit {
   displayedColumns: string[] = ['Name', 'Email', 'JobTitle', 'CountryName', 'Actions'];
   dataSource = new MatTableDataSource<any>();
+  itemsPerPage: number = 10;
+  page: number = 1;
+  totalItems: number = 0;
 
   constructor(
     private _getSubscribersService: GetSubscribersService,
@@ -28,11 +31,15 @@ export class SubscribersComponent implements OnInit {
 
   getSubscribers(): void {
     const params = {
-      page: 1,
-      count: 1,
+      //criteria: 'search',
+      page: this.page,
+      count: this.itemsPerPage,
+      sortOrder: 'Name',
+      sortType: 0
     };
     this._getSubscribersService.run(params).then((response) => {
       this.dataSource.data = response.Data;
+      this.totalItems = response.Count;
     });
   }
 
@@ -61,5 +68,10 @@ export class SubscribersComponent implements OnInit {
           await this.getSubscribers();
         }
       });
+  }
+  changePaginator(data: any): void {
+    this.itemsPerPage = data.pageSize;
+    this.page = data.pageIndex + 1;
+    this.getSubscribers();
   }
 }

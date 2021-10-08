@@ -13,7 +13,6 @@ export class GetSubscribersService {
   }
 
   async run(data: any): Promise<any> {
-    return await this._httpClient.get(`${environment.api}subscribers`, data).toPromise();
-    //return this._httpClient.post<any[]>(`${environment.api}/account/login`, data).toPromise();
+    return await this._httpClient.get(`${environment.api}subscribers`, {params: data}).toPromise();
   }
 }
