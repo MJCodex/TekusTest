@@ -22,6 +22,8 @@ import {MatCardModule} from "@angular/material/card";
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {TranslocoRootModule} from './transloco-root.module'
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 @NgModule({
   declarations: [
@@ -31,24 +33,26 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     SubscribersFormComponent,
     ConfirmDialogComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatButtonModule,
-        MatInputModule,
-        HttpClientModule,
-        ReactiveFormsModule,
-        MatSnackBarModule,
-        MatTableModule,
-        MatDialogModule,
-        MatCardModule,
-        MatCheckboxModule,
-        FormsModule,
-        MatPaginatorModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    MatTableModule,
+    MatDialogModule,
+    MatCardModule,
+    MatCheckboxModule,
+    FormsModule,
+    MatPaginatorModule,
+    TranslocoRootModule,
+    MatButtonToggleModule
+  ],
   providers: [
     {
       provide : HTTP_INTERCEPTORS,

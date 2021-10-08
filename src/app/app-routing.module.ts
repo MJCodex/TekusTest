@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {LoginComponent} from "./pages/login/login.component";
 import {SubscribersComponent} from "./pages/subscribers/subscribers.component";
+import {CheckLoginGuard} from "./shared/guard/checkLogin.guard";
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'login'},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: SubscribersComponent,
+    canActivate: [CheckLoginGuard]
   },
 ];
 

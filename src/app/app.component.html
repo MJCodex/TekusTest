@@ -302,9 +302,15 @@
   />
   <span>Patatas Subscribers ToGo</span>
     <div class="spacer"></div>
-    <a (click)="logout()">
-      Salir
-    </a>
+  <a (click)="changeLang('es')">
+    Es
+  </a>
+  <a (click)="changeLang('en')">
+    En
+  </a>
+  <a (click)="logout()" *ngIf="isLogin()">
+    Salir
+  </a>
 </div>
 
 <div class="content" role="main">
