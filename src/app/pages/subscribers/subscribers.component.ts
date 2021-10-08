@@ -29,8 +29,10 @@ export class SubscribersComponent implements OnInit {
   getSubscribers(): void {
     const params = {
       page: 1,
+      count: 1,
     };
     this._getSubscribersService.run(params).then((response) => {
+      console.log(response);
       this.dataSource.data = response.Data;
     });
   }
@@ -43,6 +45,7 @@ export class SubscribersComponent implements OnInit {
       },
     });
     dialogRef.componentInstance.newRecord.subscribe(() => {
+      this.dialog.closeAll()
       this.getSubscribers();
     });
   }

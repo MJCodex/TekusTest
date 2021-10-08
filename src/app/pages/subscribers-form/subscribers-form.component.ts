@@ -53,7 +53,7 @@ export class SubscribersFormComponent implements OnInit {
         formValue
       ]
     };
-    await this._createOrUpdateSubscribersService.run(data, this.data?.subscriber?.Id);
+    await this._createOrUpdateSubscribersService.run(this.data?.subscriber?.Id ? formValue: data, this.data?.subscriber?.Id);
     this.newRecord.emit();
   }
 }
