@@ -24,6 +24,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {TranslocoRootModule} from './transloco-root.module'
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
     FormsModule,
     MatPaginatorModule,
     TranslocoRootModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatMenuModule
   ],
   providers: [
     {

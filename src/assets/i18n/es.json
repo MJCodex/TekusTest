@@ -4,7 +4,9 @@
     "user": "Usuario",
     "password": "Contraseña",
     "sin-in": "Iniciar sesion",
-    "logout": "Cerrar sesión"
+    "logout": "Cerrar sesión",
+    "spanish": "Español",
+    "english": "Inglés"
   },
   "subscribers": {
     "new": "Nuevo",

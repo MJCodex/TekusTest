@@ -4,7 +4,9 @@
     "user": "User",
     "password": "Password",
     "sin-in": "Sign in",
-    "logout": "Logout"
+    "logout": "Logout",
+    "spanish": "Spanish",
+    "english": "English"
   },
   "subscribers": {
     "new": "New",
