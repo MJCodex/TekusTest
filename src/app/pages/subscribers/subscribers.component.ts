@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {GetSubscribersService} from '../../services/get-subscribers.service';
 import {MatTableDataSource} from '@angular/material/table';
 import {SubscribersFormComponent} from '../subscribers-form/subscribers-form.component';
 import {MatDialog} from '@angular/material/dialog';
 import {ConfirmDialogComponent} from '../../components/confirm-dialog/confirm-dialog.component';
 import {DeleteSubscribersService} from '../../services/delete-subscribers.service';
+import {MatSort} from '@angular/material/sort';
 
 @Component({
   selector: 'app-subscribers',
@@ -14,9 +15,10 @@ import {DeleteSubscribersService} from '../../services/delete-subscribers.servic
 export class SubscribersComponent implements OnInit {
   displayedColumns: string[] = ['Name', 'Email', 'JobTitle', 'CountryName', 'Actions'];
   dataSource = new MatTableDataSource<any>();
-  itemsPerPage: number = 10;
+  itemsPerPage: number = 5;
   page: number = 1;
   totalItems: number = 0;
+  @ViewChild(MatSort) sort: MatSort | any;
 
   constructor(
     private _getSubscribersService: GetSubscribersService,
@@ -27,6 +29,10 @@ export class SubscribersComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSubscribers();
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
   }
 
   getSubscribers(): void {

@@ -25,6 +25,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {TranslocoRootModule} from './transloco-root.module'
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatMenuModule} from "@angular/material/menu";
+import {MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {MatMenuModule} from "@angular/material/menu";
     MatPaginatorModule,
     TranslocoRootModule,
     MatButtonToggleModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSortModule,
   ],
   providers: [
     {
