@@ -11,7 +11,6 @@ export class LoginService {
 
   constructor(
     private _httpClient: HttpClient,
-    private _snackBar: MatSnackBar,
     private _router: Router
   ) {
   }
@@ -19,14 +18,11 @@ export class LoginService {
   async login(data: any): Promise<any> {
     return await this._httpClient.post(`${environment.api}account/login`, data).toPromise()
       .then((response: any) => {
-        localStorage.setItem('potato-token', response.Token);
-        this._router.navigateByUrl('/home');
-      }).catch((error) => {
-        this._snackBar.open(error.error.error, "",
-          {
-            duration: 1500,
-          });
-      })
+        if(response.Token){
+          localStorage.setItem('potato-token', response.Token);
+          this._router.navigateByUrl('/home');
+        }
+      });
   }
 
   async logout (): Promise<void> {

@@ -38,7 +38,6 @@ export class SubscribersComponent implements OnInit {
 
   getSubscribers(): void {
     const params: any = {
-      //criteria: 'search',
       page: this.page,
       count: this.itemsPerPage,
       sortOrder: 'Name',
