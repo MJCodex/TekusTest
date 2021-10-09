@@ -16,7 +16,8 @@
       "email": "Correo",
       "job": "Trabajo",
       "country": "Pais",
-      "actions": "Acciones"
+      "actions": "Acciones",
+      "phone": "Número de teléfono"
     }
   },
   "subscribers-form": {

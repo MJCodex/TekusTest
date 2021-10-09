@@ -13,7 +13,7 @@ import {MatSort} from '@angular/material/sort';
   styleUrls: ['./subscribers.component.sass'],
 })
 export class SubscribersComponent implements OnInit {
-  displayedColumns: string[] = ['Name', 'Email', 'JobTitle', 'CountryName', 'Actions'];
+  displayedColumns: string[] = ['Name', 'Email', 'JobTitle', 'CountryName', 'PhoneCodeAndNumber', 'Actions'];
   dataSource = new MatTableDataSource<any>();
   itemsPerPage: number = 5;
   page: number = 1;

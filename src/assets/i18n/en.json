@@ -16,7 +16,8 @@
       "email": "Email",
       "job": "Job",
       "country": "Country",
-      "actions": "Actions"
+      "actions": "Actions",
+      "phone": "Phone number"
     }
   },
   "subscribers-form": {
