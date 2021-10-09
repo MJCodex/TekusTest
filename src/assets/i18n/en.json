@@ -10,6 +10,7 @@
   },
   "subscribers": {
     "new": "New",
+    "search": "Search",
     "table":{
       "name": "Name",
       "email": "Email",

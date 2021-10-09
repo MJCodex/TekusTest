@@ -2,6 +2,10 @@
   <button mat-raised-button color="primary"
           (click)="newSubscriber()">{{'subscribers.new'|transloco}}
   </button>
+  <mat-form-field appearance="standard" class="search">
+    <mat-label>{{'subscribers.search'|transloco}}</mat-label>
+    <input matInput [(ngModel)]="search" (ngModelChange)="getSubscribers()">
+  </mat-form-field>
 </div>
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort>

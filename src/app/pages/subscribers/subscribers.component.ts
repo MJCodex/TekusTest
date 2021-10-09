@@ -18,6 +18,7 @@ export class SubscribersComponent implements OnInit {
   itemsPerPage: number = 5;
   page: number = 1;
   totalItems: number = 0;
+  search: string = '';
   @ViewChild(MatSort) sort: MatSort | any;
 
   constructor(
@@ -36,13 +37,14 @@ export class SubscribersComponent implements OnInit {
   }
 
   getSubscribers(): void {
-    const params = {
+    const params: any = {
       //criteria: 'search',
       page: this.page,
       count: this.itemsPerPage,
       sortOrder: 'Name',
       sortType: 0
     };
+    this.search ? params.criteria = this.search : '';
     this._getSubscribersService.run(params).then((response) => {
       this.dataSource.data = response.Data;
       this.totalItems = response.Count;
