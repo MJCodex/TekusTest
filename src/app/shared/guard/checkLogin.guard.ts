@@ -14,7 +14,7 @@ export class CheckLoginGuard implements CanActivate {
   }
   canActivate():
     Observable<boolean>{
-    const status = this._login.isLoged();
+    const status = this._login.isLogged();
     if (status){
       return status;
     } else {

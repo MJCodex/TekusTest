@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import {GetSubscribersService} from "./services/get-subscribers.service";
-import {DeleteSubscribersService} from "./services/delete-subscribers.service";
-import {MatDialog} from "@angular/material/dialog";
 import {LoginService} from "./services/login.service";
 import {TranslocoService} from "@ngneat/transloco";
 
@@ -25,7 +22,7 @@ export class AppComponent {
     this._translocoService.setActiveLang(lang);
   }
   isLogin(): boolean {
-    return  this._login.isLoged();
+    return  this._login.isLogged();
   }
 }
 

@@ -32,7 +32,8 @@
     "topics": "Topics",
     "save": "Save",
     "new": "New",
-    "edit": "Edit"
+    "edit": "Edit",
+    "error": "You have errors in the form"
   },
   "confirm-dialog": {
     "title": "Delete",

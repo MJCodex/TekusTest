@@ -32,7 +32,8 @@
     "topics": "Temas",
     "save": "Guardar",
     "new": "Nuevo",
-    "edit": "Editar"
+    "edit": "Editar",
+    "error": "Tienes errores en el formulario"
   },
   "confirm-dialog": {
     "title": "Eliminar",

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
-import {MatSnackBar} from "@angular/material/snack-bar";
 import {Router} from "@angular/router";
 
 @Injectable({
@@ -30,7 +29,7 @@ export class LoginService {
     await this._router.navigateByUrl('/login');
   }
 
-  isLoged (): any {
+  isLogged (): any {
     return localStorage.getItem('potato-token') ? true : false;
   }
 }

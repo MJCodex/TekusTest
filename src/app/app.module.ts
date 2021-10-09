@@ -26,6 +26,7 @@ import {TranslocoRootModule} from './transloco-root.module'
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatSortModule} from '@angular/material/sort';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import {MatSortModule} from '@angular/material/sort';
     MatButtonToggleModule,
     MatMenuModule,
     MatSortModule,
+    MatAutocompleteModule,
   ],
   providers: [
     {
