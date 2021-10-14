@@ -76,6 +76,7 @@ export class SubscribersComponent implements OnInit {
         }
       });
   }
+
   changePaginator(data: any): void {
     this.itemsPerPage = data.pageSize;
     this.page = data.pageIndex + 1;

@@ -17,7 +17,7 @@ export class LoginService {
   async login(data: any): Promise<any> {
     return await this._httpClient.post(`${environment.api}account/login`, data).toPromise()
       .then((response: any) => {
-        if(response.Token){
+        if(response && response.Token){
           localStorage.setItem('potato-token', response.Token);
           this._router.navigateByUrl('/home');
         }
