@@ -1,24 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LoginComponent} from "./pages/login/login.component";
-import {SubscribersComponent} from "./pages/subscribers/subscribers.component";
-import {CheckLoginGuard} from "./shared/guard/checkLogin.guard";
+import { CheckLoginGuard } from './shared/guard/checkLogin.guard';
+import { LayoutDefaultComponent } from './shared/layout/layout-default/layout-default.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'login'},
+  {
+    path: '',
+    component: LayoutDefaultComponent,
+    canActivate: [CheckLoginGuard],
+    loadChildren: () => import('./shared/layout/layout-default/layout-default.module').then(m => m.LayoutDefaultModule)
+  },
   {
     path: 'login',
-    component: LoginComponent,
+    component: LoginComponent
   },
   {
-    path: 'home',
-    component: SubscribersComponent,
-    canActivate: [CheckLoginGuard]
-  },
+    path: '**',
+    redirectTo: 'home'
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
