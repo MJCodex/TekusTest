@@ -43,3 +43,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#MJCodex files
+/src/environments/default-credentials.ts
