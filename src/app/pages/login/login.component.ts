@@ -3,6 +3,7 @@ import {LoginService} from "../../services/login.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Router} from "@angular/router";
+import { defaultCredentials } from '../../../environments/default-credentials';
 
 @Component({
   selector: 'app-login',
@@ -22,8 +23,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this._formBuilder.group({
-      UserName: ['', [Validators.required]],
-      Password: ['', [Validators.required]],
+      UserName: [defaultCredentials.userName, [Validators.required]],
+      Password: [defaultCredentials.password, [Validators.required]],
     });
   }
 
