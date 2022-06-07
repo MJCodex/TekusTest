@@ -26,16 +26,17 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSortModule } from '@angular/material/sort';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { LoginModule } from './pages/login/login.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     SubscribersComponent,
     SubscribersFormComponent,
     ConfirmDialogComponent
   ],
   imports: [
+    LoginModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
