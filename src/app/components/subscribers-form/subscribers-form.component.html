@@ -12,10 +12,16 @@
     <mat-form-field appearance="standard">
       <mat-label>{{'subscribers-form.name'|transloco}}</mat-label>
       <input matInput required formControlName="Name">
+      <mat-error *ngIf="form.controls.Name.errors?.required">
+        {{'errors.required'|transloco}}
+      </mat-error>
     </mat-form-field>
     <mat-form-field appearance="standard" class="form-input">
       <mat-label>{{'subscribers-form.email'|transloco}}</mat-label>
       <input matInput required formControlName="Email" type="email" name="email">
+      <mat-error *ngIf="form.controls.Email.errors?.required">
+        {{'errors.required'|transloco}}
+      </mat-error>
     </mat-form-field>
   </p>
   <p>
@@ -35,6 +41,9 @@
           </mat-option>
         </ng-container>
       </mat-autocomplete>
+      <mat-error *ngIf="form.controls.searchCountry.errors?.required">
+        {{'errors.required'|transloco}}
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="standard" class="form-input">

@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {GetSubscribersService} from '../../services/get-subscribers.service';
 import {MatTableDataSource} from '@angular/material/table';
-import {SubscribersFormComponent} from '../subscribers-form/subscribers-form.component';
+import {SubscribersFormComponent} from '../../components/subscribers-form/subscribers-form.component';
 import {MatDialog} from '@angular/material/dialog';
 import {ConfirmDialogComponent} from '../../components/confirm-dialog/confirm-dialog.component';
 import {DeleteSubscribersService} from '../../services/delete-subscribers.service';

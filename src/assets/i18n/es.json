@@ -1,4 +1,7 @@
 {
+  "errors": {
+    "required": "Requerido"
+  },
   "login": {
     "title": "Iniciar sesion",
     "user": "Usuario",

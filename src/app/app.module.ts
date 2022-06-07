@@ -15,7 +15,7 @@ import { SubscribersComponent } from './pages/subscribers/subscribers.component'
 import { MatTableModule } from '@angular/material/table';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './shared/interceptor/auth.interceptor';
-import { SubscribersFormComponent } from './pages/subscribers-form/subscribers-form.component';
+import { SubscribersFormComponent } from './components/subscribers-form/subscribers-form.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';

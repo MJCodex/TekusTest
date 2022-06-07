@@ -1,4 +1,7 @@
 {
+  "errors": {
+    "required": "Required"
+  },
   "login": {
     "title": "Sign in",
     "user": "User",
