@@ -38,7 +38,6 @@ export class AuthInterceptor implements HttpInterceptor {
       {
         duration: 1500,
       });
-    console.log(error);
     return throwError(error);
   }
 }
