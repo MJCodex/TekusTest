@@ -16,6 +16,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PagesRoutingModule } from './pages-routing.module';
+import { LayoutDefaultModule } from '../shared/layout/layout-default/layout-default.module';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { PagesRoutingModule } from './pages-routing.module';
     MatCardModule,
     MatAutocompleteModule,
     MatDialogModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    LayoutDefaultModule
   ]
 })
 export class PagesModule { }

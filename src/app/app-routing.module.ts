@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: '',
     canActivate: [CheckLoginGuard],
-    loadChildren: () => import('./shared/layout/layout-default/layout-default.module').then(m => m.LayoutDefaultModule)
+    loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
   },
   {
     path: 'login',
