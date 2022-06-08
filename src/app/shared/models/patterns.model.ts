@@ -1,4 +1,4 @@
-export interface Constants {
+export interface Patterns {
   [key: string]: {
     [key: string]: string;
   };

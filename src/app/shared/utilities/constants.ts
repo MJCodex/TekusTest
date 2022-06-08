@@ -1,6 +1,6 @@
-import { Constants } from '../models/constants.model';
+import { Patterns } from '../models/patterns.model';
 
-export const patterns: Constants = {
+export const patterns: Patterns = {
   onlyLetters: {
     pattern: '^[A-Za-zñÑáéíóúÁÉÍÓÚ ]+$',
     key: 'errors.only-letters'
