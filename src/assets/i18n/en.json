@@ -1,53 +1,53 @@
 {
+  "confirm-dialog": {
+    "message": "¿Do you want to delete this record?",
+    "no": "No",
+    "title": "Delete",
+    "yes": "Yes"
+  },
   "errors": {
-    "required": "Required",
-    "minlength": "Min {{VALUE}} chars is required",
     "default": "Another data entry expected: {{VALUE}}",
-    "only-letters": "Only letters are required",
     "invalid-email": "Invalid email",
-    "only-numbers": "Only numbers required"
+    "minlength": "Min {{VALUE}} chars is required",
+    "only-letters": "Only letters are required",
+    "only-numbers": "Only numbers required",
+    "required": "Required"
   },
   "login": {
-    "title": "Sign in",
-    "user": "User",
+    "english": "English",
+    "logout": "Logout",
     "password": "Password",
     "sin-in": "Sign in",
-    "logout": "Logout",
     "spanish": "Spanish",
-    "english": "English"
+    "title": "Sign in",
+    "user": "User"
   },
   "subscribers": {
     "new": "New",
     "search": "Search",
-    "table":{
-      "name": "Name",
+    "table": {
+      "actions": "Actions",
+      "country": "Country",
       "email": "Email",
       "job": "Job",
-      "country": "Country",
-      "actions": "Actions",
+      "name": "Name",
       "phone": "Phone number"
     }
   },
   "subscribers-form": {
-    "title": "Subscriber",
-    "name": "Name",
-    "email": "Email",
+    "area": "Area",
     "country-code": "Country code",
     "country-name": "Country name",
+    "edit": "Edit",
+    "email": "Email",
+    "error": "You have errors in the form",
+    "job-title": "Job",
+    "name": "Name",
+    "new": "New",
     "phone-code": "Phone code",
     "phone-number": "Phone number",
-    "job-title": "Job",
-    "area": "Area",
-    "topics": "Topics",
     "save": "Save",
-    "new": "New",
-    "edit": "Edit",
-    "error": "You have errors in the form"
-  },
-  "confirm-dialog": {
-    "title": "Delete",
-    "message": "¿Do you want to delete this record?",
-    "yes": "Yes",
-    "no": "No"
+    "title": "Subscriber",
+    "topics": "Topics"
   }
 }

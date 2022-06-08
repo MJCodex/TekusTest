@@ -1,53 +1,53 @@
 {
+  "confirm-dialog": {
+    "message": "¿Deseas eliminar este registro?",
+    "no": "No",
+    "title": "Eliminar",
+    "yes": "Si"
+  },
   "errors": {
-    "required": "Requerido",
-    "minlength": "Se requiere un mínimo de {{VALUE}} caracteres",
     "default": "Se esperaba otra entrada de datos: {{VALUE}}",
-    "only-letters": "Se requiere solo letras",
     "invalid-email": "Correo no válido",
-    "only-numbers": "Se requiere solo números"
+    "minlength": "Se requiere un mínimo de {{VALUE}} caracteres",
+    "only-letters": "Se requiere solo letras",
+    "only-numbers": "Se requiere solo números",
+    "required": "Requerido"
   },
   "login": {
-    "title": "Iniciar sesion",
-    "user": "Usuario",
+    "english": "Inglés",
+    "logout": "Cerrar sesión",
     "password": "Contraseña",
     "sin-in": "Iniciar sesion",
-    "logout": "Cerrar sesión",
     "spanish": "Español",
-    "english": "Inglés"
+    "title": "Iniciar sesion",
+    "user": "Usuario"
   },
   "subscribers": {
     "new": "Nuevo",
     "search": "Buscar",
     "table": {
-      "name": "Nombre",
+      "actions": "Acciones",
+      "country": "Pais",
       "email": "Correo",
       "job": "Trabajo",
-      "country": "Pais",
-      "actions": "Acciones",
+      "name": "Nombre",
       "phone": "Número de teléfono"
     }
   },
   "subscribers-form": {
-    "title": "Subscribir",
-    "name": "Nombre",
-    "email": "Correo",
+    "area": "Area",
     "country-code": "Código de pais",
     "country-name": "Nombre de pais",
+    "edit": "Editar",
+    "email": "Correo",
+    "error": "Tienes errores en el formulario",
+    "job-title": "Trabajo",
+    "name": "Nombre",
+    "new": "Nuevo",
     "phone-code": "Indicativo",
     "phone-number": "Número de teléfono",
-    "job-title": "Trabajo",
-    "area": "Area",
-    "topics": "Temas",
     "save": "Guardar",
-    "new": "Nuevo",
-    "edit": "Editar",
-    "error": "Tienes errores en el formulario"
-  },
-  "confirm-dialog": {
-    "title": "Eliminar",
-    "message": "¿Deseas eliminar este registro?",
-    "yes": "Si",
-    "no": "No"
+    "title": "Subscribir",
+    "topics": "Temas"
   }
 }
