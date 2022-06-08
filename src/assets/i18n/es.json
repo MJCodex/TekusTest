@@ -2,7 +2,10 @@
   "errors": {
     "required": "Requerido",
     "minlength": "Se requiere un mínimo de {{VALUE}} caracteres",
-    "default": "Se esperaba otra entrada de datos: {{VALUE}}"
+    "default": "Se esperaba otra entrada de datos: {{VALUE}}",
+    "only-letters": "Se requiere solo letras",
+    "invalid-email": "Correo no válido",
+    "only-numbers": "Se requiere solo números"
   },
   "login": {
     "title": "Iniciar sesion",

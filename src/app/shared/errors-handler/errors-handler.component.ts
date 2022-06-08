@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { TranslocoService } from '@ngneat/transloco';
+import { patterns } from '../utilities/constants';
 
 @Component({
   selector: 'app-errors-handler',
@@ -8,11 +9,12 @@ import { TranslocoService } from '@ngneat/transloco';
   styleUrls: ['./errors-handler.component.sass']
 })
 export class ErrorsHandlerComponent {
-  @Input() ctrl!: FormControl;
+  @Input() control!: FormControl;
 
   ERROR_MESSAGE: Record<string, Function> = {
     required: (errorKey: string) => this.translateError(errorKey),
     minlength: (errorKey: string, params: any) => this.translateError(errorKey, params.requiredLength),
+    pattern: (errorKey: string, params: any) => this.translateError(errorKey, params),
     default: (errorKey: string) => this.translocoService.translate('errors.default', {VALUE: errorKey})
   };
 
@@ -21,23 +23,26 @@ export class ErrorsHandlerComponent {
   ) { }
 
   shouldShowErrors(): boolean | null {
-    return this.ctrl && this.ctrl.errors && this.ctrl.touched;
+    return this.control && this.control.errors && this.control.touched;
   }
 
-  translateError(errorKey: string, value?: string): string {
-    console.log(errorKey);
+  translateError(errorKey: string, value?: string | any): string {
     const params = {
       VALUE: value
+    }
+    if (errorKey === 'pattern') {
+      const currentPattern = Object.values(patterns).find((pattern) => pattern.pattern === value.requiredPattern);
+      return this.translocoService.translate(currentPattern ? currentPattern.key : 'errors.default', {VALUE: errorKey});
     }
     return this.translocoService.translate(`errors.${errorKey}`, params);
   }
 
   listOfErrors(): string[] {
-    const errors: any = this.ctrl.errors;
+    const errors: any = this.control.errors;
     const errorsKeys = Object.keys(errors);
     return errorsKeys.map(errorKey =>
       this.ERROR_MESSAGE[errorKey] ?
-        this.ERROR_MESSAGE[errorKey](errorKey, this.ctrl.getError(errorKey)) : this.ERROR_MESSAGE.default(errorKey));
+        this.ERROR_MESSAGE[errorKey](errorKey, this.control.getError(errorKey)) : this.ERROR_MESSAGE.default(errorKey));
   }
 
 }

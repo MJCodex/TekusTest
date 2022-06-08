@@ -2,7 +2,10 @@
   "errors": {
     "required": "Required",
     "minlength": "Min {{VALUE}} chars is required",
-    "default": "Another data entry expected: {{VALUE}}"
+    "default": "Another data entry expected: {{VALUE}}",
+    "only-letters": "Only letters are required",
+    "invalid-email": "Invalid email",
+    "only-numbers": "Only numbers required"
   },
   "login": {
     "title": "Sign in",

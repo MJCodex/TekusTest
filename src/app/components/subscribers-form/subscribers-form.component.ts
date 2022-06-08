@@ -5,6 +5,7 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {TranslocoService} from '@ngneat/transloco';
 import {GetCountriesService} from '../../services/get-countries.service';
+import { patterns } from '../../shared/utilities/constants';
 
 @Component({
     selector: 'app-subscribers-form',
@@ -37,14 +38,16 @@ export class SubscribersFormComponent implements OnInit {
     async ngOnInit(): Promise<void> {
         this.form = this._formBuilder.group({
             Id: [this.data?.subscriber?.Id],
-            Name: [this.data?.subscriber?.Name, [Validators.pattern('^[A-Za-zñÑáéíóúÁÉÍÓÚ ]+$'), Validators.required]],
-            Email: [this.data?.subscriber?.Email, [Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'), Validators.required]],
-            CountryCode: [this.data?.subscriber?.CountryCode, [Validators.pattern('^[A-Za-zñÑáéíóúÁÉÍÓÚ ]+$'), Validators.required, Validators.maxLength(2)]],
-            CountryName: [this.data?.subscriber?.CountryName, [Validators.pattern('^[A-Za-zñÑáéíóúÁÉÍÓÚ ]+$'), Validators.required]],
-            PhoneCode: [this.data?.subscriber?.PhoneCode, [Validators.pattern('^[0-9 ]*$'), Validators.required]],
-            PhoneNumber: [this.data?.subscriber?.PhoneNumber, [Validators.pattern('^[0-9]*$'), Validators.required, Validators.minLength(10)]],
-            JobTitle: [this.data?.subscriber?.JobTitle, [Validators.pattern('^[A-Za-zñÑáéíóúÁÉÍÓÚ ]+$'), Validators.required, Validators.minLength(15)]],
-            Area: [this.data?.subscriber?.Area, [Validators.pattern('^[A-Za-zñÑáéíóúÁÉÍÓÚ ]+$'), Validators.required]],
+            Name: [this.data?.subscriber?.Name, [Validators.pattern(patterns.onlyLetters.pattern), Validators.required]],
+            Email: [this.data?.subscriber?.Email, [Validators.pattern(patterns.email.pattern), Validators.required]],
+            CountryCode: [{value: this.data?.subscriber?.CountryCode, disabled: true},
+              [Validators.pattern(patterns.onlyLetters.pattern), Validators.required, Validators.maxLength(2)]],
+            CountryName: [this.data?.subscriber?.CountryName, [Validators.pattern(patterns.onlyLetters.pattern), Validators.required]],
+            PhoneCode: [{value: this.data?.subscriber?.PhoneCode, disabled: true},
+              [Validators.pattern(patterns.onlyNumbers.pattern), Validators.required]],
+            PhoneNumber: [this.data?.subscriber?.PhoneNumber, [Validators.pattern(patterns.onlyNumbers.pattern), Validators.required, Validators.minLength(10)]],
+            JobTitle: [this.data?.subscriber?.JobTitle, [Validators.pattern(patterns.onlyLetters.pattern), Validators.required, Validators.minLength(15)]],
+            Area: [this.data?.subscriber?.Area, [Validators.pattern(patterns.onlyLetters.pattern), Validators.required]],
             Topics: this._formBuilder.array(this.topics.map(item => false)),
             searchCountry: [this.data?.subscriber?.CountryName, [Validators.required]],
         });
