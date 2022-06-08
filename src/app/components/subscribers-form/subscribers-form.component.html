@@ -66,7 +66,7 @@
       <mat-label>{{'subscribers-form.phone-number'|transloco}}</mat-label>
       <input matInput required formControlName="PhoneNumber">
       <mat-error>
-        <app-errors-handler [control]="form.get('PhoneNumber')"></app-errors-handler>
+        <app-errors-handler [control]="form.get('PhoneNumber')" [skipErrors]="['noNegative']"></app-errors-handler>
       </mat-error>
     </mat-form-field>
   </p>

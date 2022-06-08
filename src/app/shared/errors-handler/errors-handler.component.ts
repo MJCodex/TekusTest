@@ -10,6 +10,7 @@ import { patterns } from '../utilities/constants';
 })
 export class ErrorsHandlerComponent {
   @Input() control!: FormControl;
+  @Input() skipErrors: string[] = [];
 
   ERROR_MESSAGE: Record<string, Function> = {
     required: (errorKey: string) => this.translateError(errorKey),
@@ -40,7 +41,9 @@ export class ErrorsHandlerComponent {
   listOfErrors(): string[] {
     const errors: any = this.control.errors;
     const errorsKeys = Object.keys(errors);
-    return errorsKeys.map(errorKey =>
+    return errorsKeys
+      .filter(errorKey => !this.skipErrors.includes(errorKey))
+      .map(errorKey =>
       this.ERROR_MESSAGE[errorKey] ?
         this.ERROR_MESSAGE[errorKey](errorKey, this.control.getError(errorKey)) : this.ERROR_MESSAGE.default(errorKey));
   }
