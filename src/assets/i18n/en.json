@@ -1,6 +1,8 @@
 {
   "errors": {
-    "required": "Required"
+    "required": "Required",
+    "minlength": "Min {{VALUE}} chars is required",
+    "default": "Another data entry expected: {{VALUE}}"
   },
   "login": {
     "title": "Sign in",

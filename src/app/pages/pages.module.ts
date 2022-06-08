@@ -17,6 +17,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PagesRoutingModule } from './pages-routing.module';
 import { LayoutDefaultModule } from '../shared/layout/layout-default/layout-default.module';
+import { ErrorsHandlerModule } from '../shared/errors-handler/errors-handler.module';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { LayoutDefaultModule } from '../shared/layout/layout-default/layout-defa
     MatAutocompleteModule,
     MatDialogModule,
     PagesRoutingModule,
-    LayoutDefaultModule
+    LayoutDefaultModule,
+    ErrorsHandlerModule
   ]
 })
 export class PagesModule { }

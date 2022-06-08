@@ -65,6 +65,9 @@
     <mat-form-field appearance="standard">
       <mat-label>{{'subscribers-form.job-title'|transloco}}</mat-label>
       <input matInput required formControlName="JobTitle">
+      <mat-error>
+        <app-errors-handler [ctrl]="form.get('JobTitle')"></app-errors-handler>
+      </mat-error>
     </mat-form-field>
     <mat-form-field appearance="standard" class="form-input">
       <mat-label>{{'subscribers-form.area'|transloco}}</mat-label>

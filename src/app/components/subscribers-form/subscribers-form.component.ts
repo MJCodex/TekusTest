@@ -16,7 +16,6 @@ export class SubscribersFormComponent implements OnInit {
     form!: FormGroup;
     invalidForm = 'subscribers-form.error';
     countries: any = [];
-    currentCountry: any = null;
     topics = [{
         name: 'CSS',
         value: '1',
@@ -44,7 +43,7 @@ export class SubscribersFormComponent implements OnInit {
             CountryName: [this.data?.subscriber?.CountryName, [Validators.pattern('^[A-Za-zñÑáéíóúÁÉÍÓÚ ]+$'), Validators.required]],
             PhoneCode: [this.data?.subscriber?.PhoneCode, [Validators.pattern('^[0-9 ]*$'), Validators.required]],
             PhoneNumber: [this.data?.subscriber?.PhoneNumber, [Validators.pattern('^[0-9]*$'), Validators.required, Validators.minLength(10)]],
-            JobTitle: [this.data?.subscriber?.JobTitle, [Validators.pattern('^[A-Za-zñÑáéíóúÁÉÍÓÚ ]+$'), Validators.required]],
+            JobTitle: [this.data?.subscriber?.JobTitle, [Validators.pattern('^[A-Za-zñÑáéíóúÁÉÍÓÚ ]+$'), Validators.required, Validators.minLength(15)]],
             Area: [this.data?.subscriber?.Area, [Validators.pattern('^[A-Za-zñÑáéíóúÁÉÍÓÚ ]+$'), Validators.required]],
             Topics: this._formBuilder.array(this.topics.map(item => false)),
             searchCountry: [this.data?.subscriber?.CountryName, [Validators.required]],
