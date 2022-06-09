@@ -8,6 +8,7 @@
   "errors": {
     "default": "Se esperaba otra entrada de datos: {{VALUE}}",
     "invalid-email": "Correo no válido",
+    "maxlength": "Se requiere un máximo de {{VALUE}} caracteres",
     "minlength": "Se requiere un mínimo de {{VALUE}} caracteres",
     "only-letters": "Se requiere solo letras",
     "only-numbers": "Se requiere solo números",

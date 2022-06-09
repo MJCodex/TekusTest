@@ -8,6 +8,7 @@
   "errors": {
     "default": "Another data entry expected: {{VALUE}}",
     "invalid-email": "Invalid email",
+    "maxlength": "Max {{VALUE}} chars is required",
     "minlength": "Min {{VALUE}} chars is required",
     "only-letters": "Only letters are required",
     "only-numbers": "Only numbers required",

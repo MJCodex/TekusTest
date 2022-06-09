@@ -17,6 +17,7 @@ export class ErrorsHandlerComponent {
   ERROR_MESSAGE: Record<string, Function> = {
     required: (errorKey: string) => this.translateError(errorKey),
     minlength: (errorKey: string, params: any) => this.translateError(errorKey, params.requiredLength),
+    maxlength: (errorKey: string, params: any) => this.translateError(errorKey, params.requiredLength),
     pattern: (errorKey: string, params: any) => this.translateError(errorKey, params),
     default: (errorKey: string) => this.translocoService.translate('errors.default', {VALUE: errorKey})
   };

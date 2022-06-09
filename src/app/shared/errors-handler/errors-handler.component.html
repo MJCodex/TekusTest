@@ -1,7 +1,7 @@
 <ng-container *ngIf="shouldShowErrors()">
   <ng-container *ngFor="let error of listOfErrors(); let i = index">
     <mat-error *ngIf="(i < maxErrors && !showAllErrors) || (showAllErrors)">
-      {{error}} {{i}}
+      {{error}}
     </mat-error>
   </ng-container>
 </ng-container>
