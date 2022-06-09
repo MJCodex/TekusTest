@@ -9,9 +9,11 @@ import { patterns } from '../utilities/constants';
   styleUrls: ['./errors-handler.component.sass']
 })
 export class ErrorsHandlerComponent {
+  defaultMaxErrors = 2;
   @Input() control!: FormControl;
   @Input() skipErrors: string[] = [];
-
+  @Input() maxErrors = this.defaultMaxErrors;
+  @Input() showAllErrors!: boolean;
   ERROR_MESSAGE: Record<string, Function> = {
     required: (errorKey: string) => this.translateError(errorKey),
     minlength: (errorKey: string, params: any) => this.translateError(errorKey, params.requiredLength),
