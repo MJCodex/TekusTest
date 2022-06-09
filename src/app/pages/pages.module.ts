@@ -18,6 +18,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { PagesRoutingModule } from './pages-routing.module';
 import { LayoutDefaultModule } from '../shared/layout/layout-default/layout-default.module';
 import { ErrorsHandlerModule } from '../shared/errors-handler/errors-handler.module';
+import { LoaderComponentModule } from '../shared/loader-component/loader-component.module';
 
 
 @NgModule({
@@ -26,24 +27,25 @@ import { ErrorsHandlerModule } from '../shared/errors-handler/errors-handler.mod
     SubscribersFormComponent,
     ConfirmDialogComponent
   ],
-  imports: [
-    CommonModule,
-    MatFormFieldModule,
-    FormsModule,
-    MatInputModule,
-    MatButtonModule,
-    MatTableModule,
-    MatSortModule,
-    TranslocoModule,
-    MatIconModule,
-    MatPaginatorModule,
-    ReactiveFormsModule,
-    MatCardModule,
-    MatAutocompleteModule,
-    MatDialogModule,
-    PagesRoutingModule,
-    LayoutDefaultModule,
-    ErrorsHandlerModule
-  ]
+    imports: [
+        CommonModule,
+        MatFormFieldModule,
+        FormsModule,
+        MatInputModule,
+        MatButtonModule,
+        MatTableModule,
+        MatSortModule,
+        TranslocoModule,
+        MatIconModule,
+        MatPaginatorModule,
+        ReactiveFormsModule,
+        MatCardModule,
+        MatAutocompleteModule,
+        MatDialogModule,
+        PagesRoutingModule,
+        LayoutDefaultModule,
+        ErrorsHandlerModule,
+        LoaderComponentModule
+    ]
 })
 export class PagesModule { }

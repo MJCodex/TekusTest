@@ -19,6 +19,7 @@ export class SubscribersComponent implements OnInit {
   page: number = 1;
   totalItems: number = 0;
   search: string = '';
+  loadingComponent = true;
   @ViewChild(MatSort) sort: MatSort | any;
 
   constructor(
@@ -47,6 +48,7 @@ export class SubscribersComponent implements OnInit {
     this._getSubscribersService.run(params).then((response) => {
       this.dataSource.data = response.Data;
       this.totalItems = response.Count;
+      this.loadingComponent = false;
     });
   }
 
