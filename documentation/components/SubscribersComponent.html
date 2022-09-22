@@ -1,0 +1,1145 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>tekus-test documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/postmark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">tekus-test documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Escribe para buscar"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Componentes</li>
+  <li
+  >
+  SubscribersComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>Fichero</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/subscribers/subscribers.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implementa</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Meta datos</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-subscribers</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./subscribers.component.sass</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./subscribers.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Índice</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Propiedades</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dataSource" >dataSource</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns" >displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#itemsPerPage" >itemsPerPage</a>
+                            </li>
+                            <li>
+                                <a href="#loadingComponent" >loadingComponent</a>
+                            </li>
+                            <li>
+                                <a href="#page" >page</a>
+                            </li>
+                            <li>
+                                <a href="#search" >search</a>
+                            </li>
+                            <li>
+                                <a href="#sort" >sort</a>
+                            </li>
+                            <li>
+                                <a href="#totalItems" >totalItems</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Métodos</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#changePaginator" >changePaginator</a>
+                            </li>
+                            <li>
+                                <a href="#confirmDelete" >confirmDelete</a>
+                            </li>
+                            <li>
+                                <a href="#getSubscribers" >getSubscribers</a>
+                            </li>
+                            <li>
+                                <a href="#newSubscriber" >newSubscriber</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_getSubscribersService: <a href="../injectables/GetSubscribersService.html" target="_self">GetSubscribersService</a>, _deleteSubscribersService: <a href="../injectables/DeleteSubscribersService.html" target="_self">DeleteSubscribersService</a>, dialog: MatDialog)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="23" class="link-to-prism">src/app/pages/subscribers/subscribers.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parámetros :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Nombre</td>
+                                                    <td>Tipo</td>
+                                                <td>Opcional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_getSubscribersService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GetSubscribersService.html" target="_self" >GetSubscribersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_deleteSubscribersService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DeleteSubscribersService.html" target="_self" >DeleteSubscribersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Métodos
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changePaginator"></a>
+                    <span class="name">
+                        <span ><b>changePaginator</b></span>
+                        <a href="#changePaginator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changePaginator(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="82"
+                            class="link-to-prism">src/app/pages/subscribers/subscribers.component.ts:82</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="confirmDelete"></a>
+                    <span class="name">
+                        <span ><b>confirmDelete</b></span>
+                        <a href="#confirmDelete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>confirmDelete(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="68"
+                            class="link-to-prism">src/app/pages/subscribers/subscribers.component.ts:68</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSubscribers"></a>
+                    <span class="name">
+                        <span ><b>getSubscribers</b></span>
+                        <a href="#getSubscribers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSubscribers()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="40"
+                            class="link-to-prism">src/app/pages/subscribers/subscribers.component.ts:40</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="newSubscriber"></a>
+                    <span class="name">
+                        <span ><b>newSubscriber</b></span>
+                        <a href="#newSubscriber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>newSubscriber(subscriber: null)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="55"
+                            class="link-to-prism">src/app/pages/subscribers/subscribers.component.ts:55</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                    <td>Valor por defecto</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>subscriber</td>
+                                    <td>
+                                            <code>null</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>null</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="36"
+                            class="link-to-prism">src/app/pages/subscribers/subscribers.component.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="32"
+                            class="link-to-prism">src/app/pages/subscribers/subscribers.component.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Propiedades
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataSource"></a>
+                    <span class="name">
+                        <span ><b>dataSource</b></span>
+                        <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>new MatTableDataSource&lt;any&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">src/app/pages/subscribers/subscribers.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayedColumns"></a>
+                    <span class="name">
+                        <span ><b>displayedColumns</b></span>
+                        <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>[&#x27;Name&#x27;, &#x27;Email&#x27;, &#x27;JobTitle&#x27;, &#x27;CountryName&#x27;, &#x27;PhoneCodeAndNumber&#x27;, &#x27;Actions&#x27;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="16" class="link-to-prism">src/app/pages/subscribers/subscribers.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="itemsPerPage"></a>
+                    <span class="name">
+                        <span ><b>itemsPerPage</b></span>
+                        <a href="#itemsPerPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>5</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="18" class="link-to-prism">src/app/pages/subscribers/subscribers.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadingComponent"></a>
+                    <span class="name">
+                        <span ><b>loadingComponent</b></span>
+                        <a href="#loadingComponent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="22" class="link-to-prism">src/app/pages/subscribers/subscribers.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="page"></a>
+                    <span class="name">
+                        <span ><b>page</b></span>
+                        <a href="#page"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>1</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="19" class="link-to-prism">src/app/pages/subscribers/subscribers.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="search"></a>
+                    <span class="name">
+                        <span ><b>search</b></span>
+                        <a href="#search"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="21" class="link-to-prism">src/app/pages/subscribers/subscribers.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sort"></a>
+                    <span class="name">
+                        <span ><b>sort</b></span>
+                        <a href="#sort"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>    <code>MatSort | any</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decoradores : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatSort)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="23" class="link-to-prism">src/app/pages/subscribers/subscribers.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="totalItems"></a>
+                    <span class="name">
+                        <span ><b>totalItems</b></span>
+                        <a href="#totalItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="20" class="link-to-prism">src/app/pages/subscribers/subscribers.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import {GetSubscribersService} from &#x27;../../services/get-subscribers.service&#x27;;
+import {MatTableDataSource} from &#x27;@angular/material/table&#x27;;
+import {SubscribersFormComponent} from &#x27;../../components/subscribers-form/subscribers-form.component&#x27;;
+import {MatDialog} from &#x27;@angular/material/dialog&#x27;;
+import {ConfirmDialogComponent} from &#x27;../../components/confirm-dialog/confirm-dialog.component&#x27;;
+import {DeleteSubscribersService} from &#x27;../../services/delete-subscribers.service&#x27;;
+import {MatSort} from &#x27;@angular/material/sort&#x27;;
+
+@Component({
+  selector: &#x27;app-subscribers&#x27;,
+  templateUrl: &#x27;./subscribers.component.html&#x27;,
+  styleUrls: [&#x27;./subscribers.component.sass&#x27;],
+})
+export class SubscribersComponent implements OnInit, AfterViewInit {
+  displayedColumns: string[] &#x3D; [&#x27;Name&#x27;, &#x27;Email&#x27;, &#x27;JobTitle&#x27;, &#x27;CountryName&#x27;, &#x27;PhoneCodeAndNumber&#x27;, &#x27;Actions&#x27;];
+  dataSource &#x3D; new MatTableDataSource&lt;any&gt;();
+  itemsPerPage: number &#x3D; 5;
+  page: number &#x3D; 1;
+  totalItems: number &#x3D; 0;
+  search: string &#x3D; &#x27;&#x27;;
+  loadingComponent &#x3D; true;
+  @ViewChild(MatSort) sort: MatSort | any;
+
+  constructor(
+    private _getSubscribersService: GetSubscribersService,
+    private _deleteSubscribersService: DeleteSubscribersService,
+    private dialog: MatDialog,
+  ) {
+  }
+
+  ngOnInit(): void {
+    this.getSubscribers();
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.sort &#x3D; this.sort;
+  }
+
+  getSubscribers(): void {
+    const params: any &#x3D; {
+      page: this.page,
+      count: this.itemsPerPage,
+      sortOrder: &#x27;Name&#x27;,
+      sortType: 0
+    };
+    this.search ? params.criteria &#x3D; this.search : &#x27;&#x27;;
+    this._getSubscribersService.run(params).then((response) &#x3D;&gt; {
+      this.dataSource.data &#x3D; response.Data;
+      this.totalItems &#x3D; response.Count;
+      this.loadingComponent &#x3D; false;
+    });
+  }
+
+  newSubscriber(subscriber &#x3D; null): void {
+    const dialogRef &#x3D; this.dialog.open(SubscribersFormComponent, {
+      panelClass: [&#x27;w-full&#x27;, &#x27;sm:w-120&#x27;],
+      data: {
+        subscriber,
+      },
+    });
+    dialogRef.componentInstance.newRecord.subscribe(() &#x3D;&gt; {
+      this.dialog.closeAll()
+      this.getSubscribers();
+    });
+  }
+
+  confirmDelete(data: any): void {
+    this.dialog
+      .open(ConfirmDialogComponent, {
+        data: null,
+      })
+      .afterClosed()
+      .subscribe(async (confirmed: Boolean) &#x3D;&gt; {
+        if (confirmed) {
+          await this._deleteSubscribersService.run(data.Id);
+          await this.getSubscribers();
+        }
+      });
+  }
+
+  changePaginator(data: any): void {
+    this.itemsPerPage &#x3D; data.pageSize;
+    this.page &#x3D; data.pageIndex + 1;
+    this.getSubscribers();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ng-container *ngIf&#x3D;&quot;loadingComponent&quot;&gt;
+  &lt;app-loader-component&gt;&lt;/app-loader-component&gt;
+&lt;/ng-container&gt;
+&lt;ng-container *ngIf&#x3D;&quot;!loadingComponent&quot;&gt;
+  &lt;div class&#x3D;&quot;mjui-fadeIn&quot;&gt;
+    &lt;div class&#x3D;&quot;new-button&quot;&gt;
+      &lt;mat-form-field appearance&#x3D;&quot;standard&quot; class&#x3D;&quot;search&quot;&gt;
+        &lt;mat-label&gt;{{&#x27;subscribers.search&#x27;|transloco}}&lt;/mat-label&gt;
+        &lt;input matInput [(ngModel)]&#x3D;&quot;search&quot; (ngModelChange)&#x3D;&quot;getSubscribers()&quot;&gt;
+      &lt;/mat-form-field&gt;
+      &lt;button mat-raised-button color&#x3D;&quot;primary&quot;
+              (click)&#x3D;&quot;newSubscriber()&quot;&gt;{{&#x27;subscribers.new&#x27;|transloco}}
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;mat-elevation-z8&quot;&gt;
+      &lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot; matSort&gt;
+        &lt;ng-container matColumnDef&#x3D;&quot;Name&quot;&gt;
+          &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt;{{&#x27;subscribers.table.name&#x27;|transloco}}&lt;/th&gt;
+          &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; {{element.Name}} &lt;/td&gt;
+        &lt;/ng-container&gt;
+
+        &lt;ng-container matColumnDef&#x3D;&quot;Email&quot;&gt;
+          &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt;{{&#x27;subscribers.table.email&#x27;|transloco}}&lt;/th&gt;
+          &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; {{element.Email}} &lt;/td&gt;
+        &lt;/ng-container&gt;
+
+        &lt;ng-container matColumnDef&#x3D;&quot;JobTitle&quot;&gt;
+          &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt;{{&#x27;subscribers.table.job&#x27;|transloco}}&lt;/th&gt;
+          &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; {{element.Area}} &lt;/td&gt;
+        &lt;/ng-container&gt;
+
+        &lt;ng-container matColumnDef&#x3D;&quot;CountryName&quot;&gt;
+          &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt;{{&#x27;subscribers.table.country&#x27;|transloco}}&lt;/th&gt;
+          &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; {{element.CountryName}} &lt;/td&gt;
+        &lt;/ng-container&gt;
+
+        &lt;ng-container matColumnDef&#x3D;&quot;PhoneCodeAndNumber&quot;&gt;
+          &lt;th mat-header-cell *matHeaderCellDef&gt;{{&#x27;subscribers.table.phone&#x27;|transloco}}&lt;/th&gt;
+          &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; {{element.PhoneCodeAndNumber}} &lt;/td&gt;
+        &lt;/ng-container&gt;
+
+        &lt;ng-container matColumnDef&#x3D;&quot;Actions&quot;&gt;
+          &lt;th mat-header-cell *matHeaderCellDef&gt;{{&#x27;subscribers.table.actions&#x27;|transloco}}&lt;/th&gt;
+          &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+            &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;newSubscriber(element)&quot;&gt;
+              &lt;mat-icon&gt;edit&lt;/mat-icon&gt;
+            &lt;/button&gt;
+            &lt;button mat-icon-button color&#x3D;&quot;warn&quot; (click)&#x3D;&quot;confirmDelete(element)&quot;&gt;
+              &lt;mat-icon&gt;delete&lt;/mat-icon&gt;
+            &lt;/button&gt;
+          &lt;/td&gt;
+        &lt;/ng-container&gt;
+
+        &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/tr&gt;
+        &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;&gt;&lt;/tr&gt;
+      &lt;/table&gt;
+      &lt;mat-paginator [length]&#x3D;&quot;totalItems&quot;
+                     [pageSize]&#x3D;&quot;5&quot;
+                     [pageSizeOptions]&#x3D;&quot;[5, 10, 25]&quot;
+                     (page)&#x3D;&quot;changePaginator($event)&quot;
+                     aria-label&#x3D;&quot;Select page&quot;&gt;
+      &lt;/mat-paginator&gt;
+    &lt;/div&gt;
+
+    &lt;app-dynamic-table [data]&#x3D;&quot;dataSource.data&quot; [displayedColumns]&#x3D;&quot;displayedColumns&quot;&gt;
+      &lt;app-dynamic-column name&#x3D;&quot;Name&quot;&gt;&lt;/app-dynamic-column&gt;
+    &lt;/app-dynamic-table&gt;
+  &lt;/div&gt;
+&lt;/ng-container&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./subscribers.component.sass</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">table
+  width: 100%
+
+.new-button
+  text-align: right
+  margin-bottom: 10px
+.search
+  margin-right: 10px
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Leyenda</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Elemento Html</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Componente</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Elemento Html con directiva</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="loadingComponent">  <app-loader-component></app-loader-component></ng-container><ng-container *ngIf="!loadingComponent">  <div class="mjui-fadeIn">    <div class="new-button">      <mat-form-field appearance="standard" class="search">        <mat-label>{{\'subscribers.search\'|transloco}}</mat-label>        <input matInput [(ngModel)]="search" (ngModelChange)="getSubscribers()">      </mat-form-field>      <button mat-raised-button color="primary"              (click)="newSubscriber()">{{\'subscribers.new\'|transloco}}      </button>    </div>    <div class="mat-elevation-z8">      <table mat-table [dataSource]="dataSource" matSort>        <ng-container matColumnDef="Name">          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{\'subscribers.table.name\'|transloco}}</th>          <td mat-cell *matCellDef="let element"> {{element.Name}} </td>        </ng-container>        <ng-container matColumnDef="Email">          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{\'subscribers.table.email\'|transloco}}</th>          <td mat-cell *matCellDef="let element"> {{element.Email}} </td>        </ng-container>        <ng-container matColumnDef="JobTitle">          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{\'subscribers.table.job\'|transloco}}</th>          <td mat-cell *matCellDef="let element"> {{element.Area}} </td>        </ng-container>        <ng-container matColumnDef="CountryName">          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{\'subscribers.table.country\'|transloco}}</th>          <td mat-cell *matCellDef="let element"> {{element.CountryName}} </td>        </ng-container>        <ng-container matColumnDef="PhoneCodeAndNumber">          <th mat-header-cell *matHeaderCellDef>{{\'subscribers.table.phone\'|transloco}}</th>          <td mat-cell *matCellDef="let element"> {{element.PhoneCodeAndNumber}} </td>        </ng-container>        <ng-container matColumnDef="Actions">          <th mat-header-cell *matHeaderCellDef>{{\'subscribers.table.actions\'|transloco}}</th>          <td mat-cell *matCellDef="let element">            <button mat-icon-button color="primary" (click)="newSubscriber(element)">              <mat-icon>edit</mat-icon>            </button>            <button mat-icon-button color="warn" (click)="confirmDelete(element)">              <mat-icon>delete</mat-icon>            </button>          </td>        </ng-container>        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>      </table>      <mat-paginator [length]="totalItems"                     [pageSize]="5"                     [pageSizeOptions]="[5, 10, 25]"                     (page)="changePaginator($event)"                     aria-label="Select page">      </mat-paginator>    </div>    <app-dynamic-table [data]="dataSource.data" [displayedColumns]="displayedColumns">      <app-dynamic-column name="Name"></app-dynamic-column>    </app-dynamic-table>  </div></ng-container></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'DynamicColumnComponent', 'selector': 'app-dynamic-column'},{'name': 'DynamicTableComponent', 'selector': 'app-dynamic-table'},{'name': 'ErrorsHandlerComponent', 'selector': 'app-errors-handler'},{'name': 'LayoutDefaultComponent', 'selector': 'app-layout-default'},{'name': 'LayoutDefaultFooterComponent', 'selector': 'app-layout-default-footer'},{'name': 'LayoutDefaultNavBarComponent', 'selector': 'app-layout-default-nav-bar'},{'name': 'LoaderComponentComponent', 'selector': 'app-loader-component'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'SubscribersComponent', 'selector': 'app-subscribers'},{'name': 'SubscribersFormComponent', 'selector': 'app-subscribers-form'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SubscribersComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> comparación de resultados "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No hay resultados que coincidan "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SubscribersComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

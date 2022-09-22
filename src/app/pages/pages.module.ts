@@ -19,6 +19,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { LayoutDefaultModule } from '../shared/layout/layout-default/layout-default.module';
 import { ErrorsHandlerModule } from '../shared/errors-handler/errors-handler.module';
 import { LoaderComponentModule } from '../shared/loader-component/loader-component.module';
+import { DynamicTableModule } from '../components/dynamic-table/dynamic-table.module';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { LoaderComponentModule } from '../shared/loader-component/loader-compone
         PagesRoutingModule,
         LayoutDefaultModule,
         ErrorsHandlerModule,
-        LoaderComponentModule
+        LoaderComponentModule,
+        DynamicTableModule
     ]
 })
 export class PagesModule { }

@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import {GetSubscribersService} from '../../services/get-subscribers.service';
 import {MatTableDataSource} from '@angular/material/table';
 import {SubscribersFormComponent} from '../../components/subscribers-form/subscribers-form.component';
@@ -12,7 +12,7 @@ import {MatSort} from '@angular/material/sort';
   templateUrl: './subscribers.component.html',
   styleUrls: ['./subscribers.component.sass'],
 })
-export class SubscribersComponent implements OnInit {
+export class SubscribersComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['Name', 'Email', 'JobTitle', 'CountryName', 'PhoneCodeAndNumber', 'Actions'];
   dataSource = new MatTableDataSource<any>();
   itemsPerPage: number = 5;

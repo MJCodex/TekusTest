@@ -1,7 +1,8 @@
-import {Injectable} from '@angular/core';
-import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
-import {Observable, from, throwError} from 'rxjs';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { Injectable } from '@angular/core';
+import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import { from, Observable, throwError } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +11,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
   constructor(
     private _snackBar: MatSnackBar,
+    private _translocoService: TranslocoService
   ) {
   }
 
@@ -34,7 +36,8 @@ export class AuthInterceptor implements HttpInterceptor {
   }
 
   errorHandle(error: HttpErrorResponse) {
-    this._snackBar.open(error.error.error, '',
+    const generalError = this._translocoService.translate('errors.general');
+    this._snackBar.open(generalError, '',
       {
         duration: 1500,
       });

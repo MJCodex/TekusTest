@@ -61,6 +61,10 @@
                      aria-label="Select page">
       </mat-paginator>
     </div>
+
+    <app-dynamic-table [data]="dataSource.data" [displayedColumns]="displayedColumns">
+      <app-dynamic-column name="Name"></app-dynamic-column>
+    </app-dynamic-table>
   </div>
 </ng-container>
 

@@ -6,6 +6,7 @@
     "yes": "Yes"
   },
   "errors": {
+    "general": "An error occurred while processing the request",
     "default": "Another data entry expected: {{VALUE}}",
     "invalid-email": "Invalid email",
     "maxlength": "Max {{VALUE}} chars is required",
