@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { from, Observable, throwError } from 'rxjs';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { TranslocoService } from '@ngneat/transloco';
+import { NotificationsService } from '../utilities/notifications.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,8 +10,8 @@ import { TranslocoService } from '@ngneat/transloco';
 export class AuthInterceptor implements HttpInterceptor {
 
   constructor(
-    private _snackBar: MatSnackBar,
-    private _translocoService: TranslocoService
+    private _translocoService: TranslocoService,
+    private _notificationsService: NotificationsService
   ) {
   }
 
@@ -36,11 +36,7 @@ export class AuthInterceptor implements HttpInterceptor {
   }
 
   errorHandle(error: HttpErrorResponse) {
-    const generalError = this._translocoService.translate('errors.general');
-    this._snackBar.open(generalError, '',
-      {
-        duration: 1500,
-      });
+    this._notificationsService.errorNotification('errors.Error', 'errors.general')
     return throwError(error);
   }
 }

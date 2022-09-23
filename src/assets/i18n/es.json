@@ -6,6 +6,7 @@
     "yes": "Si"
   },
   "errors": {
+    "error": "Error",
     "general": "Ocurrió un error al procesar la solicitud",
     "default": "Se esperaba otra entrada de datos: {{VALUE}}",
     "invalid-email": "Correo no válido",
