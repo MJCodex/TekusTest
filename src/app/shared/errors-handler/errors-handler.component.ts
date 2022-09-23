@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { TranslocoService } from '@ngneat/transloco';
 import { patterns } from '../utilities/constants';
 
@@ -10,7 +10,7 @@ import { patterns } from '../utilities/constants';
 })
 export class ErrorsHandlerComponent {
   defaultMaxErrors = 2;
-  @Input() control!: FormControl;
+  @Input() control!: UntypedFormControl;
   @Input() skipErrors: string[] = [];
   @Input() maxErrors = this.defaultMaxErrors;
   @Input() showAllErrors!: boolean;

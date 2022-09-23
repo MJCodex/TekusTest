@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { CreateOrUpdateSubscribersService } from '../../services/create-or-update-subscribers.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -14,7 +14,7 @@ import { patterns } from '../../shared/utilities/constants';
 })
 export class SubscribersFormComponent implements OnInit {
   @Output() newRecord = new EventEmitter();
-  form!: FormGroup;
+  form!: UntypedFormGroup;
   invalidForm = 'subscribers-form.error';
   countries: any = [];
   topics = [{
@@ -26,7 +26,7 @@ export class SubscribersFormComponent implements OnInit {
   }];
 
   constructor(
-    private _formBuilder: FormBuilder,
+    private _formBuilder: UntypedFormBuilder,
     private _createOrUpdateSubscribersService: CreateOrUpdateSubscribersService,
     @Inject(MAT_DIALOG_DATA) public data: { subscriber: any },
     private _snackBar: MatSnackBar,
@@ -103,7 +103,7 @@ export class SubscribersFormComponent implements OnInit {
     return value.Name;
   }
 
-  noNegativeNumber(control: FormControl) {
+  noNegativeNumber(control: UntypedFormControl) {
     let isValid = true;
     if (control.value < 0) {
       isValid = false;
