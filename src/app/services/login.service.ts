@@ -36,7 +36,11 @@ export class LoginService {
     await this._router.navigateByUrl('/login');
   }
 
-  isLogged (): any {
+  /**
+   * Metodo para saber si un usuario esta logueado
+   * @returns {boolean}
+   */
+  isLogged (): boolean {
     return !!localStorage.getItem('potato-token');
   }
 }
