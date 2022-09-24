@@ -18,7 +18,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { LayoutDefaultModule } from '../shared/layout/layout-default/layout-default.module';
 import { ErrorsHandlerModule } from '../shared/components/errors-handler/errors-handler.module';
 import { LoaderComponentModule } from '../shared/components/loader-component/loader-component.module';
-import { DynamicTableModule } from '../components/dynamic-table/dynamic-table.module';
+import { DynamicTableModule } from '../shared/components/dynamic-table/dynamic-table.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppModule } from '../app.module';
 

@@ -11,6 +11,7 @@ import { MatSortHeader } from '@angular/material/sort';
 export class DynamicColumnComponent<T> implements OnInit, OnDestroy {
   @ViewChild(MatColumnDef) columnDef!: MatColumnDef;
   @ViewChild(MatSortHeader) sortHeader!: MatSortHeader;
+
   @Input()
   get name(): string {
     return this._name;
@@ -50,15 +51,18 @@ export class DynamicColumnComponent<T> implements OnInit, OnDestroy {
   }
 
   _sortable!: boolean;
+
   constructor(
     @Optional() public table: MatTable<any>
   ) {
   }
 
   ngOnInit() {
-    // if no label is set, use name as label
+    /**
+     * If no label is set, use name as label
+     */
     if (!this.label) {
-      this.label = this.capitilize(this.name);
+      this.label = this.capitalize(this.name);
     }
 
     if (this.table) {
@@ -76,7 +80,7 @@ export class DynamicColumnComponent<T> implements OnInit, OnDestroy {
     return this.dataAccessor ? this.dataAccessor(data, this.name) : (data as any)[this.name];
   }
 
-  capitilize(word: string) {
+  capitalize(word: string) {
     word = word.replace(/_/g, ' ');
     return word[0].toUpperCase() + word.substr(1).toLowerCase();
   }
