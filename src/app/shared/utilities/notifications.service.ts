@@ -96,10 +96,10 @@ export class NotificationsService {
     this.openNotification(notification);
   }
 
-  errorNotification(titleKey: string = 'general.Error', body: string) {
+  errorNotification(titleKey: string = 'general.Error', body: string, translateBody?: boolean) {
     const notification: Notification = {
       Title: this._translateService.instant(titleKey),
-      Body: body,
+      Body: translateBody ? this._translateService.instant(body) : body,
       Key: 'error'
     };
     this.openNotification(notification);
@@ -115,13 +115,13 @@ export class NotificationsService {
 
   }
 
-  infoNotificationWithHtml(title: string = 'general.Information', body: string) {
-    const notificacion: Notification = {
+  infoNotificationWithHtml(title: string = 'general.Information', body: string, translateBody?: boolean) {
+    const notification: Notification = {
       Title: this._translateService.instant(title),
-      Body: body,
+      Body: translateBody ? this._translateService.instant(body) : body,
       Key: 'informationWithHtml'
     };
-    this.openNotification(notificacion);
+    this.openNotification(notification);
   }
 
   infoNotification(titleKey: string = 'general.Information', bodyKey: string) {

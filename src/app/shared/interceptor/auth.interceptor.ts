@@ -22,7 +22,9 @@ export class AuthInterceptor implements HttpInterceptor {
   async handle(req: HttpRequest<any>, next: HttpHandler): Promise<any> {
     let newReq = req.clone();
 
-    // Agregando token para autorizacion de la peticion
+    /**
+     * Agregando token para la peticion
+     */
     try {
       const token = localStorage.getItem('potato-token');
       newReq = newReq.clone({
@@ -36,7 +38,7 @@ export class AuthInterceptor implements HttpInterceptor {
   }
 
   errorHandle(error: HttpErrorResponse) {
-    this._notificationsService.errorNotification('errors.Error', 'errors.general')
+    this._notificationsService.errorNotification('errors.error', 'errors.general', true);
     return throwError(error);
   }
 }
