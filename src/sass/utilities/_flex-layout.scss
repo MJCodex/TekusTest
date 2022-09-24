@@ -1,0 +1,29 @@
+@mixin flex($display: flex, $alig: center, $justify: center) {
+  display: $display;
+  align-items: $alig;
+  justify-content: $justify;
+}
+
+@mixin flex-direction(
+  $display: flex,
+  $direction: column,
+  $align: inherit,
+  $justify: center
+) {
+  display: $display;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin flex-flat() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-around() {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

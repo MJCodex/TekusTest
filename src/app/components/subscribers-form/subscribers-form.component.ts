@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CreateOrUpdateSubscribersService } from '../../services/create-or-update-subscribers.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { TranslocoService } from '@ngneat/transloco';
 import { GetCountriesService } from '../../services/get-countries.service';
 import { patterns } from '../../shared/utilities/constants';
+import { TranslateService } from '@ngx-translate/core';
+import { NotificationsService } from '../../shared/utilities/notifications.service';
 
 @Component({
   selector: 'app-subscribers-form',
@@ -14,7 +15,7 @@ import { patterns } from '../../shared/utilities/constants';
 })
 export class SubscribersFormComponent implements OnInit {
   @Output() newRecord = new EventEmitter();
-  form!: UntypedFormGroup;
+  form!: FormGroup;
   invalidForm = 'subscribers-form.error';
   countries: any = [];
   topics = [{
@@ -26,12 +27,13 @@ export class SubscribersFormComponent implements OnInit {
   }];
 
   constructor(
-    private _formBuilder: UntypedFormBuilder,
+    private _formBuilder: FormBuilder,
     private _createOrUpdateSubscribersService: CreateOrUpdateSubscribersService,
     @Inject(MAT_DIALOG_DATA) public data: { subscriber: any },
     private _snackBar: MatSnackBar,
-    private _translocoService: TranslocoService,
-    private _getCountriesService: GetCountriesService
+    private _translateService: TranslateService,
+    private _getCountriesService: GetCountriesService,
+    private _notificationsService: NotificationsService
   ) {
   }
 
@@ -66,10 +68,7 @@ export class SubscribersFormComponent implements OnInit {
         .filter((v: null) => v !== null)
     };
     if (!this.form.valid) {
-      this._snackBar.open(this._translocoService.translate(this.invalidForm), '',
-        {
-          duration: 1500
-        });
+      this._notificationsService.alertNotification('errors.Error', this.invalidForm);
       return;
     }
     const data = {
@@ -103,7 +102,7 @@ export class SubscribersFormComponent implements OnInit {
     return value.Name;
   }
 
-  noNegativeNumber(control: UntypedFormControl) {
+  noNegativeNumber(control: FormControl) {
     let isValid = true;
     if (control.value < 0) {
       isValid = false;

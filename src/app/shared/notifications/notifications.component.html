@@ -1,0 +1,27 @@
+<div class="mjui-toast-container mt-2" [ngClass]="notification.config.toastClass">
+  <div class="row mjui-toast-content">
+    <div class="col col-12">
+      <div class="row">
+        <div class="col">
+          <h3 class="mjui-h3">
+            <i class="fa fa-info mx-1"></i>
+            {{notification.title}}</h3>
+        </div>
+        <div class="col col-auto">
+          <a *ngIf="options.closeButton" class="btn mjui-btn-action close" (click)="remove()">
+            <span><i class="fa fa-times"></i></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col col-12" *ngIf="notification.message && notification.config.enableHtml"
+         [innerHTML]="notification.message">
+    </div>
+    <div class="col col-12" *ngIf="notification.message && !notification.config.enableHtml">
+      <p class="mjui-message">{{notification.message}}</p>
+    </div>
+  </div>
+  <div *ngIf="options.progressBar" class="row mjui-toast-progress">
+    <div class="mjui-toast-status-progress" [style.width]="width + '%'"></div>
+  </div>
+</div>

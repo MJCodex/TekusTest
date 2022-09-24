@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../../../../services/login.service';
-import { TranslocoService } from '@ngneat/transloco';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-layout-default-nav-bar',
@@ -13,7 +13,7 @@ export class LayoutDefaultNavBarComponent {
 
   constructor(
     private _login: LoginService,
-    private _translocoService: TranslocoService
+    private _translateService: TranslateService
   ) {
   }
 
@@ -22,7 +22,7 @@ export class LayoutDefaultNavBarComponent {
   }
 
   changeLang(lang: string): void {
-    this._translocoService.setActiveLang(lang);
+    this._translateService.use(lang);
   }
 
   isLogin(): boolean {

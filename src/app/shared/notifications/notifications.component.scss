@@ -1,0 +1,233 @@
+@import "~src/sass/utilities/variables";
+@import "~src/sass/utilities/flex-layout";
+
+@keyframes fadeinup {
+  0% {
+    opacity: 0;
+    transform: translateY(25%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeoutdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-25%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0) translateY(-5%) translateX(0%);
+  }
+  100% {
+    transform: scale(1) translateY(-5%) translateX(0%);
+  }
+}
+
+@keyframes shadowDefault {
+  to {
+    box-shadow: 0 10px 10px -5px rgba($color-gray-primary, 0.5);
+  }
+}
+
+@keyframes shadowSuccess {
+  to {
+    box-shadow: 0 10px 10px -5px rgba($color-green-brand, 0.5);
+  }
+}
+
+@keyframes shadowError {
+  to {
+    box-shadow: 0 10px 10px -5px rgba($warn-notification, 0.5);
+  }
+}
+
+@keyframes shadowAlert {
+  to {
+    box-shadow: 0 10px 10px -5px rgba($alert-notification, 0.5);
+  }
+}
+
+@keyframes shadowInformation {
+  to {
+    box-shadow: 0 10px 10px -5px rgba($text-info-notification, 0.5);
+  }
+}
+
+.mjui-toast-container {
+  background-color: $color-white;
+  padding: 10px;
+  border: 1px solid $color-gray-semi-light;
+  border-radius: 4px;
+  box-shadow: 0 0 0 0 rgba($color-white, 0);
+  animation: ripple 0.2s ease-in forwards, shadowInDefault 0.8s ease-in forwards;
+  .row {
+    &.mjui-toast-content {
+      align-items: center;
+      max-width: 300px;
+    }
+    margin: 0;
+    .col {
+      padding: 0;
+      .row {
+        align-items: center;
+      }
+      h3 {
+        font-weight: 600;
+        @include flex(flex, center, flex-start);
+      }
+      p {
+        margin: 0;
+        padding: 0.5em;
+        word-wrap: break-word;
+      }
+    }
+    &.mjui-toast-progress {
+      @include flex(flex, center, flex-end);
+      .mjui-toast-status-progress {
+        width: 100%;
+        height: 2px;
+        background-color: $color-gray-primary;
+        border-radius: 5px;
+      }
+    }
+  }
+  &:hover {
+    .mjui-toast-status-progress {
+      width: 100% !important;
+    }
+  }
+}
+
+// Status para mensaje de exito
+.mjui-toast-container.mjui-toast-success {
+  border: 1px solid $color-green-brand;
+  animation: ripple 0.2s ease-in forwards, shadowSuccess 0.8s ease-in forwards;
+  .row {
+    .col {
+      h3 {
+        color: $color-green-brand;
+        animation: fadeinup 0.5s forwards;
+        .mjui-toast-icon-title {
+          &:after {
+            content: "\f058";
+            color: $color-green-brand;
+          }
+        }
+      }
+      p {
+        animation: fadeoutdown 0.5s ease-in forwards;
+      }
+      a {
+        color: $color-green-brand;
+      }
+    }
+    &.mjui-toast-progress {
+      .mjui-toast-status-progress {
+        background-color: $color-green-brand;
+      }
+    }
+  }
+}
+
+// Status para mensaje de error
+.mjui-toast-container.mjui-toast-error {
+  border: 1px solid $warn-notification;
+  animation: ripple 0.2s ease-in forwards, shadowError 0.8s ease-in forwards;
+  .row {
+    .col {
+      h3 {
+        color: $warn-notification;
+        animation: fadeinup 0.5s forwards;
+        .mjui-toast-icon-title {
+          &:after {
+            content: "\f06a";
+            color: $warn-notification;
+          }
+        }
+      }
+      p {
+        animation: fadeoutdown 0.5s ease-in forwards;
+      }
+      a {
+        color: $warn-notification;
+      }
+    }
+    &.mjui-toast-progress {
+      .mjui-toast-status-progress {
+        background-color: $warn-notification;
+        // animation: progressStandart 3s ease-in forwards;
+      }
+    }
+  }
+}
+
+// Status para mensaje de alerta
+.mjui-toast-container.mjui-toast-alert {
+  border: 1px solid $alert-notification;
+  animation: ripple 0.2s ease-in forwards, shadowAlert 0.8s ease-in forwards;
+  .row {
+    .col {
+      h3 {
+        color: $alert-notification;
+        animation: fadeinup 0.5s forwards;
+        .mjui-toast-icon-title {
+          &:after {
+            content: "\f636";
+            color: $alert-notification;
+          }
+        }
+      }
+      p {
+        animation: fadeoutdown 0.5s ease-in forwards;
+      }
+      a {
+        color: $alert-notification;
+      }
+    }
+    &.mjui-toast-progress {
+      .mjui-toast-status-progress {
+        background-color: $alert-notification;
+      }
+    }
+  }
+}
+
+// // Status para mensaje de informacion
+.mjui-toast-container.mjui-toast-information {
+  border: 1px solid $text-info-notification;
+  animation: ripple 0.2s ease-in forwards, shadowInformation 0.8s ease-in forwards;
+  .row {
+    .col {
+      h3 {
+        color: $text-info-notification;
+        animation: fadeinup 0.5s forwards;
+        .mjui-toast-icon-title {
+          &:after {
+            content: "\f05a";
+            color: $text-info-notification;
+          }
+        }
+      }
+      p {
+        animation: fadeoutdown 0.5s ease-in forwards;
+      }
+      a {
+        color: $text-info-notification;
+      }
+    }
+    &.mjui-toast-progress {
+      .mjui-toast-status-progress {
+        background-color: $text-info-notification;
+      }
+    }
+  }
+}

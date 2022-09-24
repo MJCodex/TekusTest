@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
-import { TranslocoService } from '@ngneat/transloco';
+import { FormControl } from '@angular/forms';
 import { patterns } from '../utilities/constants';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-errors-handler',
@@ -10,7 +10,7 @@ import { patterns } from '../utilities/constants';
 })
 export class ErrorsHandlerComponent {
   defaultMaxErrors = 2;
-  @Input() control!: UntypedFormControl;
+  @Input() control!: FormControl;
   @Input() skipErrors: string[] = [];
   @Input() maxErrors = this.defaultMaxErrors;
   @Input() showAllErrors!: boolean;
@@ -19,11 +19,11 @@ export class ErrorsHandlerComponent {
     minlength: (errorKey: string, params: any) => this.translateError(errorKey, params.requiredLength),
     maxlength: (errorKey: string, params: any) => this.translateError(errorKey, params.requiredLength),
     pattern: (errorKey: string, params: any) => this.translateError(errorKey, params),
-    default: (errorKey: string) => this.translocoService.translate('errors.default', {VALUE: errorKey})
+    default: (errorKey: string) => this._translateService.instant('errors.default', {VALUE: errorKey})
   };
 
   constructor(
-    private translocoService: TranslocoService
+    private _translateService: TranslateService
   ) { }
 
   shouldShowErrors(): boolean | null {
@@ -36,9 +36,9 @@ export class ErrorsHandlerComponent {
     }
     if (errorKey === 'pattern') {
       const currentPattern = Object.values(patterns).find((pattern) => pattern.pattern === value.requiredPattern);
-      return this.translocoService.translate(currentPattern ? currentPattern.key : 'errors.default', {VALUE: errorKey});
+      return this._translateService.instant(currentPattern ? currentPattern.key : 'errors.default', {VALUE: errorKey});
     }
-    return this.translocoService.translate(`errors.${errorKey}`, params);
+    return this._translateService.instant(`errors.${errorKey}`, params);
   }
 
   listOfErrors(): string[] {

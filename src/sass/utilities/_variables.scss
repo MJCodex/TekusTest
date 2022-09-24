@@ -1,0 +1,38 @@
+//Default font
+$roboto: 'Roboto', sans-serif;
+$font-default: $roboto;
+
+//Colors
+$color-gray-primary: #4a4a4a;
+$color-gray-secondary: #929292;
+$color-gray-light: #f2f2f2;
+$color-gray-semi-light: #d8d8d8;
+$color-gray-ultra-light: #f9f9f9;
+$color-blue-link: #119ae9;
+$color-white: #fff;
+$color-black: #000;
+$color-white-50: #ffffff80;
+$color-transparent: #ffffff00;
+$color-blue-brand: #0f2761;
+$color-green-brand: #2ba130;
+$color-green-light: #c1efc3;
+$color-green-theme: #2e7d32;
+$warn-notification-light: #ffc4bf;
+$color-status-maintenance: #929292;
+$color-status-maintenance-light: #dcdcdc;
+$color-status-warn-light: #ffd0d6;
+$color-status-notification-light: #d3e6fc;
+$text-info-notification: #4a90e2;
+$color-light-blue-notification: #eaf4ff;
+$color-disabled-btn: rgba(0, 0, 0, 0.38);
+$gradient-light: linear-gradient(224deg, #fff 0%, #eeeeee 100%);
+$gradient-dark: linear-gradient(224deg, #000 0%, #252525 100%);
+
+//Others
+$transition-standard: 0.8s;
+
+//Notifications
+$alert-notification: orange;
+$info-notification: blue;
+$warn-notification: red;
+$success-notification: green;

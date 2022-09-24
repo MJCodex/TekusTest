@@ -1,23 +1,23 @@
 <form [formGroup]="form" (submit)="save()">
-  <mat-card-title>{{'subscribers-form.title'|transloco}}</mat-card-title>
+  <mat-card-title>{{'subscribers-form.title'|translate}}</mat-card-title>
   <p>
     <mat-card-subtitle
       *ngIf="!data.subscriber"
-    >{{'subscribers-form.new'|transloco}}</mat-card-subtitle>
+    >{{'subscribers-form.new'|translate}}</mat-card-subtitle>
     <mat-card-subtitle
       *ngIf="data.subscriber"
-    >{{'subscribers-form.edit'|transloco}}</mat-card-subtitle>
+    >{{'subscribers-form.edit'|translate}}</mat-card-subtitle>
   </p>
   <p>
     <mat-form-field appearance="standard">
-      <mat-label>{{'subscribers-form.name'|transloco}}</mat-label>
+      <mat-label>{{'subscribers-form.name'|translate}}</mat-label>
       <input matInput required formControlName="Name">
       <mat-error>
         <app-errors-handler [control]="form.get('Name')"></app-errors-handler>
       </mat-error>
     </mat-form-field>
     <mat-form-field appearance="standard" class="form-input">
-      <mat-label>{{'subscribers-form.email'|transloco}}</mat-label>
+      <mat-label>{{'subscribers-form.email'|translate}}</mat-label>
       <input matInput required formControlName="Email" type="email" name="email">
       <mat-error>
         <app-errors-handler [control]="form.get('Email')"></app-errors-handler>
@@ -26,7 +26,7 @@
   </p>
   <p>
     <mat-form-field appearance="standard">
-      <mat-label>{{'subscribers-form.country-name'|transloco}}</mat-label>
+      <mat-label>{{'subscribers-form.country-name'|translate}}</mat-label>
       <input type="text"
              autocomplete="potato"
              matInput
@@ -47,7 +47,7 @@
     </mat-form-field>
 
     <mat-form-field appearance="standard" class="form-input">
-      <mat-label>{{'subscribers-form.country-code'|transloco}}</mat-label>
+      <mat-label>{{'subscribers-form.country-code'|translate}}</mat-label>
       <input matInput required formControlName="CountryCode" readonly>
       <mat-error>
         <app-errors-handler [control]="form.get('CountryCode')"></app-errors-handler>
@@ -56,14 +56,14 @@
   </p>
   <p>
     <mat-form-field appearance="standard">
-      <mat-label>{{'subscribers-form.phone-code'|transloco}}</mat-label>
+      <mat-label>{{'subscribers-form.phone-code'|translate}}</mat-label>
       <input matInput required formControlName="PhoneCode" readonly>
       <mat-error>
         <app-errors-handler [control]="form.get('PhoneCode')"></app-errors-handler>
       </mat-error>
     </mat-form-field>
     <mat-form-field appearance="standard" class="form-input">
-      <mat-label>{{'subscribers-form.phone-number'|transloco}}</mat-label>
+      <mat-label>{{'subscribers-form.phone-number'|translate}}</mat-label>
       <input matInput required formControlName="PhoneNumber">
       <mat-error>
         <app-errors-handler [control]="form.get('PhoneNumber')"></app-errors-handler>
@@ -72,21 +72,21 @@
   </p>
   <p>
     <mat-form-field appearance="standard">
-      <mat-label>{{'subscribers-form.job-title'|transloco}}</mat-label>
+      <mat-label>{{'subscribers-form.job-title'|translate}}</mat-label>
       <input matInput required formControlName="JobTitle">
       <mat-error>
         <app-errors-handler [control]="form.get('JobTitle')"></app-errors-handler>
       </mat-error>
     </mat-form-field>
     <mat-form-field appearance="standard" class="form-input">
-      <mat-label>{{'subscribers-form.area'|transloco}}</mat-label>
+      <mat-label>{{'subscribers-form.area'|translate}}</mat-label>
       <input matInput required formControlName="Area">
       <mat-error>
         <app-errors-handler [control]="form.get('Area')"></app-errors-handler>
       </mat-error>
     </mat-form-field>
   </p>
-  <p>{{'subscribers-form.topics'|transloco}}</p>
+  <p>{{'subscribers-form.topics'|translate}}</p>
   <p>
     <ng-container *ngFor="let checkbox of topics; let i = index" formArrayName="Topics">
       <input type="checkbox" [formControlName]="i"/>{{checkbox.name}}
@@ -95,7 +95,7 @@
   </p>
   <mat-card-actions>
     <div class="save-button">
-      <button mat-raised-button color="primary" type="submit">{{'subscribers-form.save'|transloco}}</button>
+      <button mat-raised-button color="primary" type="submit">{{'subscribers-form.save'|translate}}</button>
     </div>
   </mat-card-actions>
 </form>

@@ -5,42 +5,42 @@
   <div class="mjui-fadeIn">
     <div class="new-button">
       <mat-form-field appearance="standard" class="search">
-        <mat-label>{{'subscribers.search'|transloco}}</mat-label>
+        <mat-label>{{'subscribers.search'|translate}}</mat-label>
         <input matInput [(ngModel)]="search" (ngModelChange)="getSubscribers()">
       </mat-form-field>
       <button mat-raised-button color="primary"
-              (click)="newSubscriber()">{{'subscribers.new'|transloco}}
+              (click)="newSubscriber()">{{'subscribers.new'|translate}}
       </button>
     </div>
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort>
         <ng-container matColumnDef="Name">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'subscribers.table.name'|transloco}}</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'subscribers.table.name'|translate}}</th>
           <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
         </ng-container>
 
         <ng-container matColumnDef="Email">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'subscribers.table.email'|transloco}}</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'subscribers.table.email'|translate}}</th>
           <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
         </ng-container>
 
         <ng-container matColumnDef="JobTitle">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'subscribers.table.job'|transloco}}</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'subscribers.table.job'|translate}}</th>
           <td mat-cell *matCellDef="let element"> {{element.Area}} </td>
         </ng-container>
 
         <ng-container matColumnDef="CountryName">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'subscribers.table.country'|transloco}}</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'subscribers.table.country'|translate}}</th>
           <td mat-cell *matCellDef="let element"> {{element.CountryName}} </td>
         </ng-container>
 
         <ng-container matColumnDef="PhoneCodeAndNumber">
-          <th mat-header-cell *matHeaderCellDef>{{'subscribers.table.phone'|transloco}}</th>
+          <th mat-header-cell *matHeaderCellDef>{{'subscribers.table.phone'|translate}}</th>
           <td mat-cell *matCellDef="let element"> {{element.PhoneCodeAndNumber}} </td>
         </ng-container>
 
         <ng-container matColumnDef="Actions">
-          <th mat-header-cell *matHeaderCellDef>{{'subscribers.table.actions'|transloco}}</th>
+          <th mat-header-cell *matHeaderCellDef>{{'subscribers.table.actions'|translate}}</th>
           <td mat-cell *matCellDef="let element">
             <button mat-icon-button color="primary" (click)="newSubscriber(element)">
               <mat-icon>edit</mat-icon>

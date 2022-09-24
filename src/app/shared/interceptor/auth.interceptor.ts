@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { from, Observable, throwError } from 'rxjs';
-import { TranslocoService } from '@ngneat/transloco';
 import { NotificationsService } from '../utilities/notifications.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +10,7 @@ import { NotificationsService } from '../utilities/notifications.service';
 export class AuthInterceptor implements HttpInterceptor {
 
   constructor(
-    private _translocoService: TranslocoService,
+    private _translateService: TranslateService,
     private _notificationsService: NotificationsService
   ) {
   }

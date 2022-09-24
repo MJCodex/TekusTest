@@ -12,14 +12,14 @@
   <mat-menu #menu="matMenu">
     <button mat-menu-item (click)="changeLang('es')">
       <mat-icon>translate</mat-icon>
-      {{'login.spanish'|transloco}}
+      {{'login.spanish'|translate}}
     </button>
     <button mat-menu-item (click)="changeLang('en')">
       <mat-icon>translate</mat-icon>
-      {{'login.english'|transloco}}
+      {{'login.english'|translate}}
     </button>
     <button mat-menu-item (click)="logout()" *ngIf="isLogin()">
       <mat-icon>logout</mat-icon>
-      {{'login.logout'|transloco}}</button>
+      {{'login.logout'|translate}}</button>
   </mat-menu>
 </div>

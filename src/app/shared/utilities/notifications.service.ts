@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { TranslocoService } from '@ngneat/transloco';
 import { ToastrService } from 'ngx-toastr';
 import { Notification } from '../models/notification.model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +10,9 @@ export class NotificationsService {
 
   constructor(
     protected toastrService: ToastrService,
-    private readonly _translocoService: TranslocoService
-  ) { }
+    private readonly _translateService: TranslateService
+  ) {
+  }
 
   /**
    * Abrir notificación
@@ -28,7 +29,7 @@ export class NotificationsService {
     switch (notification.Key) {
       case 'error': {
         notification.TimeOut = 6000;
-        notification.ToastClass = 'ark-toast-error';
+        notification.ToastClass = 'mjui-toast-error';
         notification.CloseButton = true;
         notification.ProgressBar = true;
         notification.DisableTimeOut = false;
@@ -36,7 +37,7 @@ export class NotificationsService {
       }
       case 'alert': {
         notification.TimeOut = 6000;
-        notification.ToastClass = 'ark-toast-alert';
+        notification.ToastClass = 'mjui-toast-alert';
         notification.CloseButton = true;
         notification.ProgressBar = true;
         notification.DisableTimeOut = false;
@@ -44,7 +45,7 @@ export class NotificationsService {
       }
       case 'success': {
         notification.TimeOut = 3000;
-        notification.ToastClass = 'ark-toast-success';
+        notification.ToastClass = 'mjui-toast-success';
         notification.CloseButton = true;
         notification.ProgressBar = true;
         notification.DisableTimeOut = false;
@@ -52,7 +53,7 @@ export class NotificationsService {
       }
       case 'information': {
         notification.TimeOut = 15000;
-        notification.ToastClass = 'ark-toast-information';
+        notification.ToastClass = 'mjui-toast-information';
         notification.CloseButton = true;
         notification.ProgressBar = true;
         notification.DisableTimeOut = false;
@@ -60,7 +61,7 @@ export class NotificationsService {
       }
       case 'informationWithHtml': {
         notification.TimeOut = 0;
-        notification.ToastClass = 'ark-toast-information';
+        notification.ToastClass = 'mjui-toast-information';
         notification.CloseButton = false;
         notification.ProgressBar = false;
         notification.DisableTimeOut = true;
@@ -88,8 +89,8 @@ export class NotificationsService {
 
   successNotification(titleKey: string = 'general.Success', bodyKey: string, interpolateParams?: any) {
     const notification: Notification = {
-      Title: this._translocoService.translate(titleKey),
-      Body: this._translocoService.translate(bodyKey, interpolateParams || ''),
+      Title: this._translateService.instant(titleKey),
+      Body: this._translateService.instant(bodyKey, interpolateParams || ''),
       Key: 'success'
     };
     this.openNotification(notification);
@@ -97,7 +98,7 @@ export class NotificationsService {
 
   errorNotification(titleKey: string = 'general.Error', body: string) {
     const notification: Notification = {
-      Title: this._translocoService.translate(titleKey),
+      Title: this._translateService.instant(titleKey),
       Body: body,
       Key: 'error'
     };
@@ -106,8 +107,8 @@ export class NotificationsService {
 
   alertNotification(title: string = 'general.Alert', body: string, interpolateParams?: any) {
     const notificacion: Notification = {
-      Title: this._translocoService.translate(title),
-      Body: this._translocoService.translate(body, interpolateParams || ''),
+      Title: this._translateService.instant(title),
+      Body: this._translateService.instant(body, interpolateParams || ''),
       Key: 'alert'
     };
     this.openNotification(notificacion);
@@ -116,7 +117,7 @@ export class NotificationsService {
 
   infoNotificationWithHtml(title: string = 'general.Information', body: string) {
     const notificacion: Notification = {
-      Title: this._translocoService.translate(title),
+      Title: this._translateService.instant(title),
       Body: body,
       Key: 'informationWithHtml'
     };
@@ -125,8 +126,8 @@ export class NotificationsService {
 
   infoNotification(titleKey: string = 'general.Information', bodyKey: string) {
     const notification: Notification = {
-      Title: this._translocoService.translate(titleKey),
-      Body: this._translocoService.translate(bodyKey),
+      Title: this._translateService.instant(titleKey),
+      Body: this._translateService.instant(bodyKey),
       Key: 'information'
     };
     this.openNotification(notification);

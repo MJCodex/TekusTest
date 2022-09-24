@@ -9,7 +9,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
-import { TranslocoModule } from '@ngneat/transloco';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
@@ -20,6 +19,7 @@ import { LayoutDefaultModule } from '../shared/layout/layout-default/layout-defa
 import { ErrorsHandlerModule } from '../shared/errors-handler/errors-handler.module';
 import { LoaderComponentModule } from '../shared/loader-component/loader-component.module';
 import { DynamicTableModule } from '../components/dynamic-table/dynamic-table.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -36,7 +36,7 @@ import { DynamicTableModule } from '../components/dynamic-table/dynamic-table.mo
         MatButtonModule,
         MatTableModule,
         MatSortModule,
-        TranslocoModule,
+        TranslateModule,
         MatIconModule,
         MatPaginatorModule,
         ReactiveFormsModule,

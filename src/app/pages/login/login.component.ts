@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {LoginService} from "../../services/login.service";
-import {UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
-import {MatSnackBar} from "@angular/material/snack-bar";
-import {Router} from "@angular/router";
+import { LoginService } from '../../services/login.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { defaultCredentials } from '../../../environments/default-credentials';
 
 @Component({
@@ -12,11 +11,10 @@ import { defaultCredentials } from '../../../environments/default-credentials';
 })
 export class LoginComponent implements OnInit {
   hide = true;
-  form!: UntypedFormGroup;
+  form!: FormGroup;
   constructor(
     private login_: LoginService,
-    private _formBuilder: UntypedFormBuilder,
-    private _snackBar: MatSnackBar,
+    private _formBuilder: FormBuilder,
     private _router: Router
   ) {
   }
