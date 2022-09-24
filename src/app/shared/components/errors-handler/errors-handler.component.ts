@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { patterns } from '../utilities/constants';
+import { patterns } from '../../utilities/constants';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ErrorsHandlerComponent {
   defaultMaxErrors = 2;
-  @Input() control!: FormControl;
+  @Input() formControl!: FormControl;
   @Input() skipErrors: string[] = [];
   @Input() maxErrors = this.defaultMaxErrors;
   @Input() showAllErrors!: boolean;
@@ -27,7 +27,7 @@ export class ErrorsHandlerComponent {
   ) { }
 
   shouldShowErrors(): boolean | null {
-    return this.control && this.control.errors && this.control.touched;
+    return this.formControl && this.formControl.errors && this.formControl.touched;
   }
 
   translateError(errorKey: string, value?: string | any): string {
@@ -42,13 +42,13 @@ export class ErrorsHandlerComponent {
   }
 
   listOfErrors(): string[] {
-    const errors: any = this.control.errors;
+    const errors: any = this.formControl.errors;
     const errorsKeys = Object.keys(errors);
     return errorsKeys
       .filter(errorKey => !this.skipErrors.includes(errorKey))
       .map(errorKey =>
       this.ERROR_MESSAGE[errorKey] ?
-        this.ERROR_MESSAGE[errorKey](errorKey, this.control.getError(errorKey)) : this.ERROR_MESSAGE.default(errorKey));
+        this.ERROR_MESSAGE[errorKey](errorKey, this.formControl.getError(errorKey)) : this.ERROR_MESSAGE.default(errorKey));
   }
 
 }

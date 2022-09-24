@@ -239,75 +239,75 @@
                                         <tbody>
                                                 <tr>
                                                         <td>_formBuilder</td>
-                                                  
+
                                                         <td>
                                                                         <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
                                                         </td>
-                                                  
+
                                                     <td>
                                                             No
                                                     </td>
-                                                    
+
                                                 </tr>
                                                 <tr>
                                                         <td>_createOrUpdateSubscribersService</td>
-                                                  
+
                                                         <td>
                                                                         <code><a href="../injectables/CreateOrUpdateSubscribersService.html" target="_self" >CreateOrUpdateSubscribersService</a></code>
                                                         </td>
-                                                  
+
                                                     <td>
                                                             No
                                                     </td>
-                                                    
+
                                                 </tr>
                                                 <tr>
                                                         <td>data</td>
-                                                  
+
                                                         <td>
                                                                     <code>literal type</code>
                                                         </td>
-                                                  
+
                                                     <td>
                                                             No
                                                     </td>
-                                                    
+
                                                 </tr>
                                                 <tr>
                                                         <td>_snackBar</td>
-                                                  
+
                                                         <td>
                                                                     <code>MatSnackBar</code>
                                                         </td>
-                                                  
+
                                                     <td>
                                                             No
                                                     </td>
-                                                    
+
                                                 </tr>
                                                 <tr>
                                                         <td>_translocoService</td>
-                                                  
+
                                                         <td>
                                                                     <code>TranslocoService</code>
                                                         </td>
-                                                  
+
                                                     <td>
                                                             No
                                                     </td>
-                                                    
+
                                                 </tr>
                                                 <tr>
                                                         <td>_getCountriesService</td>
-                                                  
+
                                                         <td>
                                                                         <code><a href="../injectables/GetCountriesService.html" target="_self" >GetCountriesService</a></code>
                                                         </td>
-                                                  
+
                                                     <td>
                                                             No
                                                     </td>
-                                                    
+
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -346,7 +346,7 @@
 
 
     <section>
-    
+
     <h3 id="methods">
         Métodos
     </h3>
@@ -381,7 +381,7 @@
 
                     <div class="io-description">
                         <b>Parámetros :</b>
-                        
+
                         <table class="params">
                             <thead>
                                 <tr>
@@ -413,7 +413,7 @@
 
                     </div>
                     <div class="io-description">
-                        
+
                     </div>
                 </td>
             </tr>
@@ -528,7 +528,7 @@
 
                     <div class="io-description">
                         <b>Parámetros :</b>
-                        
+
                         <table class="params">
                             <thead>
                                 <tr>
@@ -560,7 +560,7 @@
 
                     </div>
                     <div class="io-description">
-                        
+
                     </div>
                 </td>
             </tr>
@@ -636,7 +636,7 @@
 
                     <div class="io-description">
                         <b>Parámetros :</b>
-                        
+
                         <table class="params">
                             <thead>
                                 <tr>
@@ -668,7 +668,7 @@
 
                     </div>
                     <div class="io-description">
-                        
+
                     </div>
                 </td>
             </tr>
@@ -676,7 +676,7 @@
     </table>
 </section>
     <section>
-    
+
     <h3 id="inputs">
         Propiedades
     </h3>
@@ -1098,14 +1098,14 @@ export class SubscribersFormComponent implements OnInit {
         </div>
     </div>
 
-    
+
 </div>
 
 <script src="../js/libs/vis.min.js"></script>
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><form [formGroup]="form" (submit)="save()">  <mat-card-title>{{\'subscribers-form.title\'|transloco}}</mat-card-title>  <p>    <mat-card-subtitle      *ngIf="!data.subscriber"    >{{\'subscribers-form.new\'|transloco}}</mat-card-subtitle>    <mat-card-subtitle      *ngIf="data.subscriber"    >{{\'subscribers-form.edit\'|transloco}}</mat-card-subtitle>  </p>  <p>    <mat-form-field appearance="standard">      <mat-label>{{\'subscribers-form.name\'|transloco}}</mat-label>      <input matInput required formControlName="Name">      <mat-error>        <app-errors-handler [control]="form.get(\'Name\')"></app-errors-handler>      </mat-error>    </mat-form-field>    <mat-form-field appearance="standard" class="form-input">      <mat-label>{{\'subscribers-form.email\'|transloco}}</mat-label>      <input matInput required formControlName="Email" type="email" name="email">      <mat-error>        <app-errors-handler [control]="form.get(\'Email\')"></app-errors-handler>      </mat-error>    </mat-form-field>  </p>  <p>    <mat-form-field appearance="standard">      <mat-label>{{\'subscribers-form.country-name\'|transloco}}</mat-label>      <input type="text"             autocomplete="potato"             matInput             formControlName="searchCountry"             (ngModelChange)="getCountries()"             [matAutocomplete]="customAuto">      <mat-autocomplete #customAuto="matAutocomplete" [displayWith]="displayName.bind(this)"                        (optionSelected)="selectionChange($event)">        <ng-container>          <mat-option *ngFor="let option of countries" [value]="option">            {{ displayName(option) }}          </mat-option>        </ng-container>      </mat-autocomplete>      <mat-error>        <app-errors-handler [control]="form.get(\'searchCountry\')"></app-errors-handler>      </mat-error>    </mat-form-field>    <mat-form-field appearance="standard" class="form-input">      <mat-label>{{\'subscribers-form.country-code\'|transloco}}</mat-label>      <input matInput required formControlName="CountryCode" readonly>      <mat-error>        <app-errors-handler [control]="form.get(\'CountryCode\')"></app-errors-handler>      </mat-error>    </mat-form-field>  </p>  <p>    <mat-form-field appearance="standard">      <mat-label>{{\'subscribers-form.phone-code\'|transloco}}</mat-label>      <input matInput required formControlName="PhoneCode" readonly>      <mat-error>        <app-errors-handler [control]="form.get(\'PhoneCode\')"></app-errors-handler>      </mat-error>    </mat-form-field>    <mat-form-field appearance="standard" class="form-input">      <mat-label>{{\'subscribers-form.phone-number\'|transloco}}</mat-label>      <input matInput required formControlName="PhoneNumber">      <mat-error>        <app-errors-handler [control]="form.get(\'PhoneNumber\')"></app-errors-handler>      </mat-error>    </mat-form-field>  </p>  <p>    <mat-form-field appearance="standard">      <mat-label>{{\'subscribers-form.job-title\'|transloco}}</mat-label>      <input matInput required formControlName="JobTitle">      <mat-error>        <app-errors-handler [control]="form.get(\'JobTitle\')"></app-errors-handler>      </mat-error>    </mat-form-field>    <mat-form-field appearance="standard" class="form-input">      <mat-label>{{\'subscribers-form.area\'|transloco}}</mat-label>      <input matInput required formControlName="Area">      <mat-error>        <app-errors-handler [control]="form.get(\'Area\')"></app-errors-handler>      </mat-error>    </mat-form-field>  </p>  <p>{{\'subscribers-form.topics\'|transloco}}</p>  <p>    <ng-container *ngFor="let checkbox of topics; let i = index" formArrayName="Topics">      <input type="checkbox" [formControlName]="i"/>{{checkbox.name}}    </ng-container>  </p>  <mat-card-actions>    <div class="save-button">      <button mat-raised-button color="primary" type="submit">{{\'subscribers-form.save\'|transloco}}</button>    </div>  </mat-card-actions></form></div>'
+        var COMPONENT_TEMPLATE = '<div><form [formGroup]="form" (submit)="save()">  <mat-card-title>{{\'subscribers-form.title\'|transloco}}</mat-card-title>  <p>    <mat-card-subtitle      *ngIf="!data.subscriber"    >{{\'subscribers-form.new\'|transloco}}</mat-card-subtitle>    <mat-card-subtitle      *ngIf="data.subscriber"    >{{\'subscribers-form.edit\'|transloco}}</mat-card-subtitle>  </p>  <p>    <mat-form-field appearance="standard">      <mat-label>{{\'subscribers-form.name\'|transloco}}</mat-label>      <input matInput required formControlName="Name">      <mat-error>        <app-errors-handler [formControl]="form.get(\'Name\')"></app-errors-handler>      </mat-error>    </mat-form-field>    <mat-form-field appearance="standard" class="form-input">      <mat-label>{{\'subscribers-form.email\'|transloco}}</mat-label>      <input matInput required formControlName="Email" type="email" name="email">      <mat-error>        <app-errors-handler [formControl]="form.get(\'Email\')"></app-errors-handler>      </mat-error>    </mat-form-field>  </p>  <p>    <mat-form-field appearance="standard">      <mat-label>{{\'subscribers-form.country-name\'|transloco}}</mat-label>      <input type="text"             autocomplete="potato"             matInput             formControlName="searchCountry"             (ngModelChange)="getCountries()"             [matAutocomplete]="customAuto">      <mat-autocomplete #customAuto="matAutocomplete" [displayWith]="displayName.bind(this)"                        (optionSelected)="selectionChange($event)">        <ng-container>          <mat-option *ngFor="let option of countries" [value]="option">            {{ displayName(option) }}          </mat-option>        </ng-container>      </mat-autocomplete>      <mat-error>        <app-errors-handler [formControl]="form.get(\'searchCountry\')"></app-errors-handler>      </mat-error>    </mat-form-field>    <mat-form-field appearance="standard" class="form-input">      <mat-label>{{\'subscribers-form.country-code\'|transloco}}</mat-label>      <input matInput required formControlName="CountryCode" readonly>      <mat-error>        <app-errors-handler [formControl]="form.get(\'CountryCode\')"></app-errors-handler>      </mat-error>    </mat-form-field>  </p>  <p>    <mat-form-field appearance="standard">      <mat-label>{{\'subscribers-form.phone-code\'|transloco}}</mat-label>      <input matInput required formControlName="PhoneCode" readonly>      <mat-error>        <app-errors-handler [formControl]="form.get(\'PhoneCode\')"></app-errors-handler>      </mat-error>    </mat-form-field>    <mat-form-field appearance="standard" class="form-input">      <mat-label>{{\'subscribers-form.phone-number\'|transloco}}</mat-label>      <input matInput required formControlName="PhoneNumber">      <mat-error>        <app-errors-handler [formControl]="form.get(\'PhoneNumber\')"></app-errors-handler>      </mat-error>    </mat-form-field>  </p>  <p>    <mat-form-field appearance="standard">      <mat-label>{{\'subscribers-form.job-title\'|transloco}}</mat-label>      <input matInput required formControlName="JobTitle">      <mat-error>        <app-errors-handler [formControl]="form.get(\'JobTitle\')"></app-errors-handler>      </mat-error>    </mat-form-field>    <mat-form-field appearance="standard" class="form-input">      <mat-label>{{\'subscribers-form.area\'|transloco}}</mat-label>      <input matInput required formControlName="Area">      <mat-error>        <app-errors-handler [formControl]="form.get(\'Area\')"></app-errors-handler>      </mat-error>    </mat-form-field>  </p>  <p>{{\'subscribers-form.topics\'|transloco}}</p>  <p>    <ng-container *ngFor="let checkbox of topics; let i = index" formArrayName="Topics">      <input type="checkbox" [formControlName]="i"/>{{checkbox.name}}    </ng-container>  </p>  <mat-card-actions>    <div class="save-button">      <button mat-raised-button color="primary" type="submit">{{\'subscribers-form.save\'|transloco}}</button>    </div>  </mat-card-actions></form></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'DynamicColumnComponent', 'selector': 'app-dynamic-column'},{'name': 'DynamicTableComponent', 'selector': 'app-dynamic-table'},{'name': 'ErrorsHandlerComponent', 'selector': 'app-errors-handler'},{'name': 'LayoutDefaultComponent', 'selector': 'app-layout-default'},{'name': 'LayoutDefaultFooterComponent', 'selector': 'app-layout-default-footer'},{'name': 'LayoutDefaultNavBarComponent', 'selector': 'app-layout-default-nav-bar'},{'name': 'LoaderComponentComponent', 'selector': 'app-loader-component'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'SubscribersComponent', 'selector': 'app-subscribers'},{'name': 'SubscribersFormComponent', 'selector': 'app-subscribers-form'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SubscribersFormComponent'};
