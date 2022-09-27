@@ -2,8 +2,8 @@
 @import "../../../../sass/utilities/flex-layout";
 
 :host {
+  pointer-events: all;
   .mjui-btn-action {
-    pointer-events: all;
     cursor: pointer;
   }
 }
