@@ -1,13 +1,13 @@
 <div class="login-container">
-  <form [formGroup]="form" class="login-card" (submit)="login()">
-    <div class="login mat-elevation-z8">
-      <h1 class="title">{{'login.title'|translate}}</h1>
-      <mat-form-field appearance="standard" class="control-login">
+  <form [formGroup]="form" class="login-form-container" (submit)="login()">
+    <div class="login-form mat-elevation-z8">
+      <h1 class="my-4">{{'login.title'|translate}}</h1>
+      <mat-form-field class="w-100">
         <mat-label>{{'login.user'|translate}}</mat-label>
         <input matInput required formControlName="UserName">
       </mat-form-field>
       <br>
-      <mat-form-field appearance="standard" class="control-login">
+      <mat-form-field class="w-100">
         <mat-label>{{'login.password'|translate}}</mat-label>
         <input matInput required [type]="hide ? 'password' : 'text'" formControlName="Password">
         <button mat-icon-button matSuffix type="button" (click)="hide = !hide" [attr.aria-label]="'Hide password'"
@@ -15,13 +15,11 @@
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
       </mat-form-field>
-      <div class="login-card">
-        <button mat-raised-button color="primary"
-                class="control-login"
-                type="submit" [disabled]="form.invalid"
-        >{{'login.sin-in'|translate}}
-        </button>
-      </div>
+      <button mat-raised-button color="primary"
+              class="w-100"
+              type="submit" [disabled]="form.invalid"
+      >{{'login.sin-in'|translate}}
+      </button>
     </div>
   </form>
 </div>
