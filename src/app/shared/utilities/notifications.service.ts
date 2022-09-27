@@ -26,37 +26,28 @@ export class NotificationsService {
   }
 
   private processNotification = (notification: Notification) => {
+    notification.CloseButton = true;
+    notification.ProgressBar = true;
+    notification.DisableTimeOut = false;
     switch (notification.Key) {
       case 'error': {
         notification.TimeOut = 6000;
         notification.ToastClass = 'mjui-toast-error';
-        notification.CloseButton = true;
-        notification.ProgressBar = true;
-        notification.DisableTimeOut = false;
         break;
       }
       case 'alert': {
         notification.TimeOut = 6000;
         notification.ToastClass = 'mjui-toast-alert';
-        notification.CloseButton = true;
-        notification.ProgressBar = true;
-        notification.DisableTimeOut = false;
         break;
       }
       case 'success': {
         notification.TimeOut = 3000;
         notification.ToastClass = 'mjui-toast-success';
-        notification.CloseButton = true;
-        notification.ProgressBar = true;
-        notification.DisableTimeOut = false;
         break;
       }
       case 'information': {
         notification.TimeOut = 15000;
         notification.ToastClass = 'mjui-toast-information';
-        notification.CloseButton = true;
-        notification.ProgressBar = true;
-        notification.DisableTimeOut = false;
         break;
       }
       case 'informationWithHtml': {
@@ -106,12 +97,12 @@ export class NotificationsService {
   }
 
   alertNotification(title: string = 'general.Alert', body: string, interpolateParams?: any) {
-    const notificacion: Notification = {
+    const notification: Notification = {
       Title: this._translateService.instant(title),
       Body: this._translateService.instant(body, interpolateParams || ''),
       Key: 'alert'
     };
-    this.openNotification(notificacion);
+    this.openNotification(notification);
 
   }
 
