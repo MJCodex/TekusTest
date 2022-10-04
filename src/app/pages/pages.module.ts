@@ -20,7 +20,7 @@ import { ErrorsHandlerModule } from '../shared/components/errors-handler/errors-
 import { LoaderComponentModule } from '../shared/components/loader-component/loader-component.module';
 import { DynamicTableModule } from '../shared/components/dynamic-table/dynamic-table.module';
 import { TranslateModule } from '@ngx-translate/core';
-import { AppModule } from '../app.module';
+import { FormControlPipeModule } from '../shared/pipes/pipes.module';
 
 
 @NgModule({
@@ -49,7 +49,7 @@ import { AppModule } from '../app.module';
     ErrorsHandlerModule,
     LoaderComponentModule,
     DynamicTableModule,
-    AppModule
+    FormControlPipeModule
   ]
 })
 export class PagesModule { }
