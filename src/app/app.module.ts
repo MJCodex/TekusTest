@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
+import { AppComponent, HttpLoaderFactory } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './shared/interceptor/auth.interceptor';
 import { LoginModule } from './pages/login/login.module';
@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NotificationsModule } from './shared/components/notifications/notifications.module';
 
 
@@ -44,6 +43,4 @@ import { NotificationsModule } from './shared/components/notifications/notificat
 export class AppModule {
 }
 
-export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(http);
-}
+
