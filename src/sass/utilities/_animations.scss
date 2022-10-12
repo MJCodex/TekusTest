@@ -1,0 +1,27 @@
+.mjui-fadeIn {
+  animation: fadeIn 500ms;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+.mjui-fadeInDown {
+  animation: fadeInDown 500ms;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 100;
+    transform: translateY(0%);
+  }
+}
