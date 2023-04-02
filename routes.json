@@ -1,0 +1,4 @@
+{
+  "/account/login?UserName=patata": "/account",
+  "subscribers?page=1&count=5&sortOrder=Name&sortType=0": "/subscribers"
+}

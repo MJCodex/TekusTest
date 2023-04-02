@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {Router} from "@angular/router";
 import { LoginDataModel } from '../shared/models/login-data.model';
@@ -22,7 +22,8 @@ export class LoginService {
    * @returns {Promise<any>} Resuelve la promesa en el retorno
    */
   async login(data: LoginDataModel): Promise<any> {
-    return await this._httpClient.post(`${environment.api}account/login`, data).toPromise()
+    let params: HttpParams = new HttpParams().append("Username",data.UserName);
+    return await this._httpClient.get(`${environment.api}account/login`, { params }).toPromise()
       .then((response: any) => {
         if(response && response.Token){
           localStorage.setItem('potato-token', response.Token);

@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "compodoc": "npx compodoc -p tsconfig.doc.json --language es-ES --theme postmark"
+    "compodoc": "npx compodoc -p tsconfig.doc.json --language es-ES --theme postmark",
+    "json-serve": "json-server --watch db.json --port 3004 --routes routes.json"
   },
   "private": true,
   "dependencies": {

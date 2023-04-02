@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  api: 'https://lab.invertebrado.co/api/'
+  //api: 'https://lab.invertebrado.co/api/',
+  api: 'http://localhost:3004/'
 };
 
 /*

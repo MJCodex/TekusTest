@@ -1,50 +1,37 @@
-import {
-  AfterContentInit,
-  Component,
-  ContentChild,
-  ContentChildren, Input,
-  OnChanges,
-  QueryList, ViewChild
-} from '@angular/core';
-import { DynamicColumnComponent } from './dynamic-column/dynamic-column.component';
-import { MatColumnDef, MatHeaderRowDef, MatRowDef, MatTable, MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-dynamic-table',
   templateUrl: './dynamic-table.component.html',
   styleUrls: ['./dynamic-table.component.sass']
 })
-export class DynamicTableComponent<T> implements OnChanges, AfterContentInit {
-  @ContentChildren(DynamicColumnComponent) dynColumns!: QueryList<DynamicColumnComponent<T>>;
-  @ContentChildren(MatColumnDef) columnDefs!: QueryList<MatColumnDef>;
-  @ContentChild(MatHeaderRowDef) headerRowDef!: MatHeaderRowDef;
-  @ContentChildren(MatRowDef) rowDefs!: QueryList<MatRowDef<T>>;
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ContentChild(MatSort) sort!: MatSort;
-  @ViewChild(MatTable) table!: MatTable<T>;
-  @Input() displayedColumns: any;
+export class DynamicTableComponent<T> implements OnInit {
   @Input() data: any;
-  public dataSource = new MatTableDataSource([]);
+  @Input() displayedColumns: any;
+  columns!: Array<any>
+  dataSource: any
 
-  ngOnChanges() {
-    if (this.data) {
-      this.setData(this.data);
-    }
-  }
-
-  ngAfterContentInit() {
-    this.dynColumns.forEach(dynColumn => this.table.addColumnDef(dynColumn.columnDef));
-    this.columnDefs.forEach(columnDef => this.table.addColumnDef(columnDef));
-  }
-
-  setData(data: never[]) {
-    console.log(data);
-    if (Array.isArray(data)) {
-      this.dataSource.data = data;
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-    }
+  ngOnInit() {
+    // Get list of columns by gathering unique keys of objects found in DATA.
+    const columns = this.data
+      .reduce((columns: any, row: any) => {
+        return [...columns, ...Object.keys(row)]
+      }, [])
+      .reduce((columns:any, column: any) => {
+        return columns.includes(column)
+          ? columns
+          : [...columns, column]
+      }, [])
+    // Describe the columns for <mat-table>.
+    this.columns = columns.map((column: any) => {
+      return {
+        columnDef: column,
+        header: column,
+        cell: (element: any) => `${element[column] ? element[column] : ``}`
+      }
+    })
+    this.displayedColumns = this.columns.map(c => c.columnDef);
+    // Set the dataSource for <mat-table>.
+    this.dataSource = this.data
   }
 }
