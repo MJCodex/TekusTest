@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {GetSubscribersService} from '../../services/get-subscribers.service';
 import {MatTableDataSource} from '@angular/material/table';
 import {SubscribersFormComponent} from '../../components/subscribers-form/subscribers-form.component';
@@ -6,6 +6,9 @@ import {MatDialog} from '@angular/material/dialog';
 import {ConfirmDialogComponent} from '../../components/confirm-dialog/confirm-dialog.component';
 import {DeleteSubscribersService} from '../../services/delete-subscribers.service';
 import {MatSort} from '@angular/material/sort';
+import {ConfigColumnsModel} from "../../shared/models/config-columns.model";
+import {SubscribersApiModel} from "../../shared/models/subscribers-api.model";
+import {ApiResponseModel} from "../../shared/models/api-response.model";
 
 @Component({
   selector: 'app-subscribers',
@@ -14,7 +17,48 @@ import {MatSort} from '@angular/material/sort';
 })
 export class SubscribersComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['Name', 'Email', 'JobTitle', 'CountryName', 'PhoneCodeAndNumber', 'Actions'];
-  dataSource = new MatTableDataSource<any>();
+  configColumns: ConfigColumnsModel[] = [
+    {
+      displayName: 'Name',
+      objectKey: 'Name'
+    },
+    {
+      displayName: 'Email',
+      objectKey: 'Email'
+    },
+    {
+      displayName: 'JobTitle',
+      objectKey: 'JobTitle',
+      renderComponent: {
+        component: TestComponent,
+        properties: {
+          message: 'From config columns'
+        }
+      }
+    },
+    {
+      displayName: 'CountryName',
+      objectKey: 'CountryName'
+    },
+    {
+      displayName: 'PhoneCodeAndNumber',
+      objectKey: 'PhoneCodeAndNumber',
+      renderComponent: {
+        component: TestComponent,
+        properties: {
+          message: 'From config columns'
+        }
+      }
+    },
+    {
+      displayName: 'Some',
+      objectKey: 'Some.Some',
+      customRowValue: (row: SubscribersApiModel, objectKey: string): string => {
+        return `${row.Activity} custom value`;
+      },
+    }
+  ]
+  dataSource = new MatTableDataSource<SubscribersApiModel[]>();
   itemsPerPage: number = 5;
   page: number = 1;
   totalItems: number = 0;
@@ -45,7 +89,7 @@ export class SubscribersComponent implements OnInit, AfterViewInit {
       sortType: 0
     };
     this.search ? params.criteria = this.search : '';
-    this._getSubscribersService.run(params).then((response) => {
+    this._getSubscribersService.run(params).then((response: ApiResponseModel<SubscribersApiModel[]>) => {
       this.dataSource.data = response.Data;
       this.totalItems = response.Count;
       this.loadingComponent = false;
@@ -83,5 +127,23 @@ export class SubscribersComponent implements OnInit, AfterViewInit {
     this.itemsPerPage = data.pageSize;
     this.page = data.pageIndex + 1;
     this.getSubscribers();
+  }
+}
+
+
+@Component({
+  selector: 'test-component',
+  template: `
+    <button mat-raised-button (click)="openEditDialog()">click</button>
+  `,
+})
+export class TestComponent implements OnInit {
+  message: string = 'static message';
+  row!: {};
+  ngOnInit(): void {
+  }
+
+  openEditDialog(): void {
+    console.log(this.row)
   }
 }

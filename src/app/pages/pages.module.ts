@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SubscribersComponent } from './subscribers/subscribers.component';
+import {SubscribersComponent, TestComponent} from './subscribers/subscribers.component';
 import { SubscribersFormComponent } from '../components/subscribers-form/subscribers-form.component';
 import { ConfirmDialogComponent } from '../components/confirm-dialog/confirm-dialog.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -27,7 +27,8 @@ import { FormControlPipeModule } from '../shared/pipes/pipes.module';
   declarations: [
     SubscribersComponent,
     SubscribersFormComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    TestComponent
   ],
   imports: [
     CommonModule,

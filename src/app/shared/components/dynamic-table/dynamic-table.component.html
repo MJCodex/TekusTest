@@ -1,7 +1,24 @@
-<mat-table #table [dataSource]="dataSource">
-  <ng-container *ngFor="let column of columns" [cdkColumnDef]="column.columnDef">
-    <mat-header-cell *cdkHeaderCellDef>{{ column.header }}</mat-header-cell>
-    <mat-cell *cdkCellDef="let row">{{ column.cell(row) }}</mat-cell>
+<mat-table [dataSource]="data">
+  <ng-container *ngFor="let column of configColumns; let i=index" [cdkColumnDef]="column.displayName">
+    <mat-header-cell *cdkHeaderCellDef>{{ column.displayName }}</mat-header-cell>
+
+
+    <mat-cell *matCellDef="let row">
+
+      <ng-container *ngIf="column.renderComponent">
+        <ng-container #componentContainer></ng-container>
+      </ng-container>
+
+      <ng-container *ngIf="column.customRowValue">
+        {{column.customRowValue(row, column.objectKey)}}
+      </ng-container>
+
+      <ng-container *ngIf="!column.customRowValue && !column.renderComponent">
+        {{column.objectKey.includes('.') ? getNestedValue(row, column.objectKey) : row[column.objectKey] }}
+      </ng-container>
+
+    </mat-cell>
+
   </ng-container>
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>

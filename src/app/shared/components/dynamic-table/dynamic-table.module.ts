@@ -4,6 +4,7 @@ import {DynamicTableComponent} from './dynamic-table.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {CdkTableModule} from "@angular/cdk/table";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {CdkTableModule} from "@angular/cdk/table";
     CommonModule,
     MatTableModule,
     MatPaginatorModule,
-    CdkTableModule
+    CdkTableModule,
+    MatButtonModule
   ]
 })
 export class DynamicTableModule { }
