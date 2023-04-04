@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {GetSubscribersService} from '../../services/get-subscribers.service';
 import {MatTableDataSource} from '@angular/material/table';
 import {SubscribersFormComponent} from '../../components/subscribers-form/subscribers-form.component';
@@ -9,6 +9,8 @@ import {MatSort} from '@angular/material/sort';
 import {ConfigColumnsModel} from "../../shared/models/config-columns.model";
 import {SubscribersApiModel} from "../../shared/models/subscribers-api.model";
 import {ApiResponseModel} from "../../shared/models/api-response.model";
+import {DynamicTableEventsModel} from "../../shared/models/dynamic-table-events.model";
+import {dynamicTableEvents} from "../../shared/components/dynamic-table/dynamic-table.component";
 
 @Component({
   selector: 'app-subscribers',
@@ -20,11 +22,13 @@ export class SubscribersComponent implements OnInit, AfterViewInit {
   configColumns: ConfigColumnsModel[] = [
     {
       displayName: 'Name',
-      objectKey: 'Name'
+      objectKey: 'Name',
+      templateColumn: true
     },
     {
       displayName: 'Email',
-      objectKey: 'Email'
+      objectKey: 'Email',
+      templateColumn: true
     },
     {
       displayName: 'JobTitle',
@@ -32,7 +36,9 @@ export class SubscribersComponent implements OnInit, AfterViewInit {
       renderComponent: {
         component: TestComponent,
         properties: {
-          message: 'From config columns'
+          message: 'TestComponent',
+          index: 1,
+          emitter: true
         }
       }
     },
@@ -44,16 +50,17 @@ export class SubscribersComponent implements OnInit, AfterViewInit {
       displayName: 'PhoneCodeAndNumber',
       objectKey: 'PhoneCodeAndNumber',
       renderComponent: {
-        component: TestComponent,
+        component: Test2Component,
         properties: {
-          message: 'From config columns'
+          message: 'Test2Component',
+          index: 2
         }
       }
     },
     {
       displayName: 'Some',
       objectKey: 'Some.Some',
-      customRowValue: (row: SubscribersApiModel, objectKey: string): string => {
+      rawValue: (row: SubscribersApiModel, objectKey: string): string => {
         return `${row.Activity} custom value`;
       },
     }
@@ -79,6 +86,11 @@ export class SubscribersComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
+  }
+
+  parentClick(row: any) {
+    console.log(row);
+    alert('some click from parent');
   }
 
   getSubscribers(): void {
@@ -128,22 +140,53 @@ export class SubscribersComponent implements OnInit, AfterViewInit {
     this.page = data.pageIndex + 1;
     this.getSubscribers();
   }
+
+  eventFromDynamicTable(event: DynamicTableEventsModel): void {
+    console.log(event)
+  }
 }
 
 
 @Component({
   selector: 'test-component',
   template: `
-    <button mat-raised-button (click)="openEditDialog()">click</button>
+    <button mat-raised-button (click)="openEditDialog()">click {{index}}</button>
   `,
 })
 export class TestComponent implements OnInit {
-  message: string = 'static message';
+  message: string = 'TestComponent';
   row!: {};
+  index!: number;
+  @Output() eventEmitter: EventEmitter<DynamicTableEventsModel> = new EventEmitter;
+
   ngOnInit(): void {
   }
 
   openEditDialog(): void {
-    console.log(this.row)
+    console.log(this.row);
+    const sortEvent: DynamicTableEventsModel = {
+      KeyEvent: dynamicTableEvents.Sort,
+      Data: undefined
+    };
+    this.eventEmitter.emit(sortEvent);
+  }
+}
+
+@Component({
+  selector: 'test2-component',
+  template: `
+    <button mat-mini-fab (click)="openEditDialog()">click {{index}}</button>
+  `,
+})
+export class Test2Component implements OnInit {
+  message: string = 'Test2Component';
+  row!: {};
+  index!: number;
+
+  ngOnInit(): void {
+  }
+
+  openEditDialog(): void {
+    console.log(this.row);
   }
 }

@@ -4,5 +4,6 @@ export interface ConfigColumnsModel {
   displayName: string;
   objectKey: string;
   renderComponent?: RenderComponentModel;
-  customRowValue? (row: any, objectKey: string): string;
+  templateColumn?: boolean;
+  rawValue? (row: any, objectKey: string): string;
 }

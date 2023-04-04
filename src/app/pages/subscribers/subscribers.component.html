@@ -62,7 +62,13 @@
       </mat-paginator>
     </div>
 
-    <app-dynamic-table [data]="dataSource.data" [configColumns]="configColumns">
+    <app-dynamic-table [data]="dataSource.data" [configColumns]="configColumns" (eventFromDynamicTable)="eventFromDynamicTable($event)">
+      <ng-template let-row appCustomColumn columName="Name">
+        <button mat-raised-button (click)="parentClick(row)">b1</button>
+      </ng-template>
+      <ng-template let-row appCustomColumn columName="Email">
+        <button mat-raised-button (click)="parentClick(row)">b2</button>
+      </ng-template>
     </app-dynamic-table>
   </div>
 </ng-container>

@@ -1,4 +1,5 @@
 export interface RenderComponentModel {
   component: any;
-  properties: object
+  properties: object;
+  emitter?: boolean;
 }

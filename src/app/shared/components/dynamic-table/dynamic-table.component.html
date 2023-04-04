@@ -1,7 +1,6 @@
-<mat-table [dataSource]="data">
+<mat-table [dataSource]="data" matSort>
   <ng-container *ngFor="let column of configColumns; let i=index" [cdkColumnDef]="column.displayName">
-    <mat-header-cell *cdkHeaderCellDef>{{ column.displayName }}</mat-header-cell>
-
+    <mat-header-cell *cdkHeaderCellDef mat-sort-header>{{ column.displayName }}</mat-header-cell>
 
     <mat-cell *matCellDef="let row">
 
@@ -9,11 +8,19 @@
         <ng-container #componentContainer></ng-container>
       </ng-container>
 
-      <ng-container *ngIf="column.customRowValue">
-        {{column.customRowValue(row, column.objectKey)}}
+      <ng-container *ngIf="column.templateColumn">
+        <ng-container *ngFor="let customColumn of customColumns">
+          <ng-container *ngIf="customColumn.columName === column.displayName">
+            <ng-container *ngTemplateOutlet="customColumn.templateRef; context: {$implicit: row}"></ng-container>
+          </ng-container>
+        </ng-container>
       </ng-container>
 
-      <ng-container *ngIf="!column.customRowValue && !column.renderComponent">
+      <ng-container *ngIf="column.rawValue">
+        {{column.rawValue(row, column.objectKey)}}
+      </ng-container>
+
+      <ng-container *ngIf="!column.rawValue && !column.renderComponent && !column.templateColumn">
         {{column.objectKey.includes('.') ? getNestedValue(row, column.objectKey) : row[column.objectKey] }}
       </ng-container>
 
