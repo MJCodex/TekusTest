@@ -74,7 +74,7 @@ export class DynamicTableComponent implements OnInit, AfterViewInit {
     const columnsKeyObject: { [key: string]: ConfigColumnsModel } = {};
     let totalColumns: number = 0;
     this.configColumns.forEach((col: ConfigColumnsModel): void => {
-      if (col.renderComponent) {
+      if (col.renderComponent && col.objectKey) {
         columnsKeyObject[col.objectKey] = col;
         totalColumns++;
       }

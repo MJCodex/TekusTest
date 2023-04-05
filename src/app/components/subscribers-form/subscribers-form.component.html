@@ -13,14 +13,14 @@
       <mat-label>{{'subscribers-form.name'|translate}}</mat-label>
       <input matInput required formControlName="Name">
       <mat-error>
-        <app-errors-handler [formControl]="$any(form.get('Name'))"></app-errors-handler>
+        <app-errors-handler [inputFormControl]="form.get('Name') | formControl"></app-errors-handler>
       </mat-error>
     </mat-form-field>
     <mat-form-field appearance="standard" class="form-input">
       <mat-label>{{'subscribers-form.email'|translate}}</mat-label>
       <input matInput required formControlName="Email" type="email" name="email">
       <mat-error>
-        <app-errors-handler [formControl]="form.get('Email') | formControl"></app-errors-handler>
+        <app-errors-handler [inputFormControl]="form.get('Email') | formControl"></app-errors-handler>
       </mat-error>
     </mat-form-field>
   </p>
@@ -30,19 +30,18 @@
       <input type="text"
              autocomplete="potato"
              matInput
-             formControlName="searchCountry"
-             (ngModelChange)="getCountries()"
-             [matAutocomplete]="customAuto">
-      <mat-autocomplete #customAuto="matAutocomplete" [displayWith]="displayName.bind(this)"
-                        (optionSelected)="selectionChange($event)">
+             formControlName="SearchCountry"
+             [matAutocomplete]="matAutocomplete">
+      <mat-autocomplete #matAutocomplete="matAutocomplete" [displayWith]="displayName.bind(this)"
+                        (optionSelected)="selectionChange($event.option.value)">
         <ng-container>
-          <mat-option *ngFor="let option of countries" [value]="option">
-            {{ displayName(option) }}
+          <mat-option *ngFor="let country of countries" [value]="country">
+            {{ displayName(country) }}
           </mat-option>
         </ng-container>
       </mat-autocomplete>
       <mat-error>
-        <app-errors-handler [formControl]="form.get('searchCountry') | formControl"></app-errors-handler>
+        <app-errors-handler [inputFormControl]="form.get('SearchCountry') | formControl"></app-errors-handler>
       </mat-error>
     </mat-form-field>
 
@@ -50,7 +49,7 @@
       <mat-label>{{'subscribers-form.country-code'|translate}}</mat-label>
       <input matInput required formControlName="CountryCode" readonly>
       <mat-error>
-        <app-errors-handler [formControl]="form.get('CountryCode') | formControl"></app-errors-handler>
+        <app-errors-handler [inputFormControl]="form.get('CountryCode') | formControl"></app-errors-handler>
       </mat-error>
     </mat-form-field>
   </p>
@@ -59,14 +58,14 @@
       <mat-label>{{'subscribers-form.phone-code'|translate}}</mat-label>
       <input matInput required formControlName="PhoneCode" readonly>
       <mat-error>
-        <app-errors-handler [formControl]="form.get('PhoneCode') | formControl"></app-errors-handler>
+        <app-errors-handler [inputFormControl]="form.get('PhoneCode') | formControl"></app-errors-handler>
       </mat-error>
     </mat-form-field>
     <mat-form-field appearance="standard" class="form-input">
       <mat-label>{{'subscribers-form.phone-number'|translate}}</mat-label>
       <input matInput required formControlName="PhoneNumber">
       <mat-error>
-        <app-errors-handler [formControl]="form.get('PhoneNumber') | formControl"></app-errors-handler>
+        <app-errors-handler [inputFormControl]="form.get('PhoneNumber') | formControl"></app-errors-handler>
       </mat-error>
     </mat-form-field>
   </p>
@@ -75,21 +74,21 @@
       <mat-label>{{'subscribers-form.job-title'|translate}}</mat-label>
       <input matInput required formControlName="JobTitle">
       <mat-error>
-        <app-errors-handler [formControl]="form.get('JobTitle') | formControl"></app-errors-handler>
+        <app-errors-handler [inputFormControl]="form.get('JobTitle') | formControl"></app-errors-handler>
       </mat-error>
     </mat-form-field>
     <mat-form-field appearance="standard" class="form-input">
       <mat-label>{{'subscribers-form.area'|translate}}</mat-label>
       <input matInput required formControlName="Area">
       <mat-error>
-        <app-errors-handler [formControl]="form.get('Area') | formControl"></app-errors-handler>
+        <app-errors-handler [inputFormControl]="form.get('Area') | formControl"></app-errors-handler>
       </mat-error>
     </mat-form-field>
   </p>
   <p>{{'subscribers-form.topics'|translate}}</p>
   <p>
-    <ng-container *ngFor="let checkbox of topics; let i = index" formArrayName="Topics">
-      <input type="checkbox" [formControlName]="i"/>{{checkbox.name}}
+    <ng-container *ngFor="let topic of topics; let i = index" formArrayName="Topics">
+      <input type="checkbox" [formControlName]="i"/>{{topic}}
     </ng-container>
 
   </p>

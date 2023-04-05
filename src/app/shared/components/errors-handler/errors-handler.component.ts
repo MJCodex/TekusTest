@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ErrorsHandlerComponent {
   defaultMaxErrors = 2;
-  @Input() formControl!: FormControl;
+  @Input() inputFormControl!: FormControl;
   @Input() skipErrors: string[] = [];
   @Input() maxErrors = this.defaultMaxErrors;
   @Input() showAllErrors!: boolean;
@@ -27,7 +27,7 @@ export class ErrorsHandlerComponent {
   ) { }
 
   shouldShowErrors(): boolean | null {
-    return this.formControl && this.formControl.errors && this.formControl.touched;
+    return this.inputFormControl && this.inputFormControl.errors && this.inputFormControl.touched;
   }
 
   translateError(errorKey: string, value?: string | any): string {
@@ -42,13 +42,13 @@ export class ErrorsHandlerComponent {
   }
 
   listOfErrors(): string[] {
-    const errors: any = this.formControl.errors;
+    const errors: any = this.inputFormControl.errors;
     const errorsKeys = Object.keys(errors);
     return errorsKeys
       .filter(errorKey => !this.skipErrors.includes(errorKey))
       .map(errorKey =>
       this.ERROR_MESSAGE[errorKey] ?
-        this.ERROR_MESSAGE[errorKey](errorKey, this.formControl.getError(errorKey)) : this.ERROR_MESSAGE.default(errorKey));
+        this.ERROR_MESSAGE[errorKey](errorKey, this.inputFormControl.getError(errorKey)) : this.ERROR_MESSAGE.default(errorKey));
   }
 
 }

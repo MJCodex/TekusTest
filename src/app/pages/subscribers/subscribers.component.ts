@@ -58,11 +58,8 @@ export class SubscribersComponent implements OnInit, AfterViewInit {
       }
     },
     {
-      displayName: 'Some',
-      objectKey: 'Some.Some',
-      rawValue: (row: SubscribersApiModel, objectKey: string): string => {
-        return `${row.Activity} custom value`;
-      },
+      displayName: 'Actions',
+      templateColumn: true
     }
   ]
   dataSource = new MatTableDataSource<SubscribersApiModel[]>();
@@ -95,10 +92,8 @@ export class SubscribersComponent implements OnInit, AfterViewInit {
 
   getSubscribers(): void {
     const params: any = {
-      page: this.page,
-      count: this.itemsPerPage,
-      sortOrder: 'Name',
-      sortType: 0
+      _page: this.page,
+      _limit: this.itemsPerPage
     };
     this.search ? params.criteria = this.search : '';
     this._getSubscribersService.run(params).then((response: ApiResponseModel<SubscribersApiModel[]>) => {

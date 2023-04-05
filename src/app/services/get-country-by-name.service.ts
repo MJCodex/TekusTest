@@ -6,7 +6,7 @@ import {ApiCountriesModel} from "../shared/models/api-countries.model";
 @Injectable({
   providedIn: 'root'
 })
-export class GetCountriesService {
+export class GetCountryByNameService {
 
   constructor(
     private _httpClient: HttpClient,

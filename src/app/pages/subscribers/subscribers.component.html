@@ -36,7 +36,7 @@
 
         <ng-container matColumnDef="PhoneCodeAndNumber">
           <th mat-header-cell *matHeaderCellDef>{{'subscribers.table.phone'|translate}}</th>
-          <td mat-cell *matCellDef="let element"> {{element.PhoneCodeAndNumber}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.PhoneNumber}} </td>
         </ng-container>
 
         <ng-container matColumnDef="Actions">
@@ -66,8 +66,13 @@
       <ng-template let-row appCustomColumn columName="Name">
         <button mat-raised-button (click)="parentClick(row)">b1</button>
       </ng-template>
-      <ng-template let-row appCustomColumn columName="Email">
-        <button mat-raised-button (click)="parentClick(row)">b2</button>
+      <ng-template let-row appCustomColumn columName="Actions">
+        <button mat-icon-button color="primary" (click)="newSubscriber(row)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="confirmDelete(row)">
+          <mat-icon>delete</mat-icon>
+        </button>
       </ng-template>
     </app-dynamic-table>
   </div>
